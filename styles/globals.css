@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white dark:bg-gray-900;
+}
+
+header {
+  @apply sticky z-50 top-[-20px] transition-all;
+}
+
+nav,
+footer {
+  @apply dark:bg-gray-900 px-0 shadow-none !important;
+}
+
+.footer-icon {
+  @apply flex space-x-6 mt-0 justify-center;
+}
