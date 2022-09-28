@@ -5,7 +5,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header className="h-20 py-5">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto">
         <Navbar fluid={true} rounded={true}>
           <Navbar.Brand>
             <span className="self-center whitespace-nowrap text-xl font-bold dark:text-white">
