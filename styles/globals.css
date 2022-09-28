@@ -27,6 +27,10 @@ nav > div.mx-auto.flex.flex-wrap.items-center.justify-between {
   @apply px-6;
 }
 
+footer > div > span {
+  @apply flex justify-center mb-4;
+}
+
 .footer-icon {
   @apply flex space-x-6 mt-0 justify-center;
 }
