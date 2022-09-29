@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "flowbite-react";
-import Link from "next/link";
+import { Link } from "react-scroll/modules";
 import { useRouter } from "next/router";
 
 const Header = () => {
@@ -17,49 +17,49 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse>
-            <Link href="/">
-              <a
-                className={`cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white  ${
-                  router.asPath == "/"
-                    ? "dark:text-white"
-                    : "dark:text-gray-400"
-                }`}
-              >
-                Home
-              </a>
+            <Link
+              activeClass="active"
+              to="hero"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={100}
+              className="cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white dark:text-gray-400"
+            >
+              Home
             </Link>
-            <Link href="#about">
-              <a
-                className={`cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white ${
-                  router.asPath == "/#about"
-                    ? "dark:text-white"
-                    : "dark:text-gray-400"
-                }`}
-              >
-                About
-              </a>
+            <Link
+              activeClass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={100}
+              className="cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white dark:text-gray-400"
+            >
+              About
             </Link>
-            <Link href="#project">
-              <a
-                className={`cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white ${
-                  router.asPath == "/#project"
-                    ? "dark:text-white"
-                    : "dark:text-gray-400"
-                }`}
-              >
-                Project
-              </a>
+            <Link
+              activeClass="active"
+              to="project"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={100}
+              className="cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white dark:text-gray-400"
+            >
+              Project
             </Link>
-            <Link href="#experience">
-              <a
-                className={`cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white ${
-                  router.asPath == "/#experience"
-                    ? "dark:text-white"
-                    : "dark:text-gray-400"
-                }`}
-              >
-                Experience
-              </a>
+            <Link
+              activeClass="active"
+              to="experience"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={100}
+              className="cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white dark:text-gray-400"
+            >
+              Experience
             </Link>
           </Navbar.Collapse>
         </Navbar>
