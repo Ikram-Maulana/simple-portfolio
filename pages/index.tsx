@@ -3,6 +3,7 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import ScrollToTop from "react-scroll-to-top";
 import HorizontalBreak from "../components/HorizontalBreak";
 import Layout, { siteTitle } from "../components/Layout";
 import { getAllExperiences } from "../utils";
@@ -30,7 +31,6 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-
       {/* Hero */}
       <section id="hero" className="bg-white dark:bg-gray-900 overflow-hidden">
         <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 xl:py-24">
@@ -76,7 +76,6 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
           </div>
         </div>
       </section>
-
       {/* About Me */}
       <section id="about" className="bg-white dark:bg-gray-900 overflow-hidden">
         <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 lg:py-20 flex flex-no-wrap md:items-start md:space-x-8 items-start flex-col-reverse md:flex-row-reverse md:space-x-reverse">
@@ -222,9 +221,7 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
           </div>
         </div>
       </section>
-
       <HorizontalBreak />
-
       {/* My Project */}
       <section
         id="project"
@@ -243,9 +240,7 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
           </div>
         </div>
       </section>
-
       <HorizontalBreak />
-
       {/* Experience */}
       <section
         id="experience"
@@ -264,7 +259,7 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
 
             {/* Looping Experience */}
             {experiences_data.map((data) => (
-              <div className="py-12 xl:py-20" key={data.id}>
+              <div className="pt-12 xl:pt-20" key={data.id}>
                 <div className="mb-4">
                   <div
                     style={{ outline: "none" }}
@@ -294,6 +289,8 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
           </div>
         </div>
       </section>
+
+      <ScrollToTop smooth />
     </Layout>
   );
 };

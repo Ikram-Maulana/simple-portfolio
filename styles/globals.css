@@ -27,6 +27,14 @@ nav > div.mx-auto.flex.flex-wrap.items-center.justify-between {
   @apply px-6;
 }
 
+.scroll-to-top {
+  @apply flex justify-center items-center;
+}
+
+.scroll-to-top > svg {
+  @apply w-5 h-5;
+}
+
 footer > div > span {
   @apply flex justify-center mb-4;
 }
