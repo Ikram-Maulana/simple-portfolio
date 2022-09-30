@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white dark:bg-gray-900;
+}
+
+header {
+  @apply sticky z-50 top-[-20px];
+}
+
+nav,
+footer {
+  @apply dark:bg-gray-900 px-0 shadow-none !important;
+}
+
+nav {
+  @apply py-2.5 md:py-5 !important;
+}
+
+nav > div.mx-auto.flex.flex-wrap.items-center.justify-between {
+  @apply px-6;
+}
+
+.scroll-to-top {
+  @apply flex justify-center items-center;
+}
+
+.scroll-to-top > svg {
+  @apply w-5 h-5;
+}
+
+.active {
+  @apply text-white !important;
+}
+
+.button-projects {
+  @apply grid grid-cols-2 grid-rows-1 gap-2 justify-center items-center mt-7 !important;
+}
+
+footer > div > span {
+  @apply flex justify-center mb-4;
+}
+
+.footer-icon {
+  @apply flex space-x-6 mt-0 justify-center;
+}
