@@ -3,7 +3,7 @@ import axios from "axios";
 export async function getAllExperiences() {
   try {
     const response = await axios.get(
-      "https://portfolio-api-ikram.vercel.app/experiences"
+      "https://api.ikrammaulana.vercel.app/experiences"
     );
     return response.data;
   } catch (error) {
@@ -14,7 +14,7 @@ export async function getAllExperiences() {
 export async function getAllProjects() {
   try {
     const response = await axios.get(
-      "https://portfolio-api-ikram.vercel.app/projects"
+      "https://api.ikrammaulana.vercel.app/projects"
     );
     return response.data;
   } catch (error) {
