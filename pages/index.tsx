@@ -3,6 +3,7 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { BsGithub } from "react-icons/bs";
 import ScrollToTop from "react-scroll-to-top";
 import Experiences from "../components/Experiences";
 import HorizontalBreak from "../components/HorizontalBreak";
@@ -32,6 +33,7 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+
       {/* Hero */}
       <section id="hero" className="bg-white dark:bg-gray-900 overflow-hidden">
         <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 xl:py-24">
@@ -66,7 +68,7 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
             <div className="flex justify-center items-center flex-col sm:flex-row mt-6">
               <Link href={"https://www.linkedin.com/in/ikram-maulana/"}>
                 <a
-                  className="py-3 mx-2 my-2 rounded-full font-bold translate-hover-2 hover:shadow-lg transition-all ease-in-out duration-150 px-5 bg-sky-500 text-white text-center leading-4 hover:bg-sky-600 hover:text-white"
+                  className="py-3 mx-2 my-2 rounded-lg font-bold translate-hover-2 hover:shadow-lg transition-all ease-in-out duration-150 px-5 bg-blue-600 text-white text-center leading-4 hover:bg-blue-700 hover:text-white"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -77,6 +79,7 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
           </div>
         </div>
       </section>
+
       {/* About Me */}
       <section id="about" className="bg-white dark:bg-gray-900 overflow-hidden">
         <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 lg:py-20 flex flex-no-wrap md:items-start md:space-x-8 items-start flex-col-reverse md:flex-row-reverse md:space-x-reverse">
@@ -203,9 +206,11 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
             <div className="flex items-center flex-col sm:flex-row mt-4">
               <Link href="https://github.com/Ikram-Maulana">
                 <a target="_blank" rel="noopener noreferrer">
-                  <Button outline={true} pill={true}>
-                    My Github
-                  </Button>
+                  <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 w-full">
+                    <span className="relative px-5 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 w-full">
+                      My Github
+                    </span>
+                  </button>
                 </a>
               </Link>
             </div>
@@ -222,7 +227,9 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
           </div>
         </div>
       </section>
+
       <HorizontalBreak />
+
       {/* My Project */}
       <section
         id="project"
@@ -239,9 +246,54 @@ const Home: NextPage<experienceProps> = ({ experiences }) => {
               </h1>
             </div>
           </div>
+
+          {/* Looping Projects */}
+          <div className="pt-12 xl:pt-20 grid grid-cols-1 grid-rows-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 p-5">
+              <Image
+                loader={({ src }) => src}
+                src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt="test"
+                width={1024}
+                height={682}
+                className="object-cover rounded-md hover:scale-110 transition-all"
+              />
+              <h5 className="mt-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Ranavid Web App
+              </h5>
+              <p className="mb-7 font-normal text-gray-700 dark:text-gray-400">
+                Ranavid Web App Project for Capstone Purpose, Build Using
+                Webpack4, Bootstrap and SCSS.
+              </p>
+
+              <div className="grid grid-cols-2 grid-rows-1 gap-2 justify-center items-center">
+                <Link href="https://github.com/SIB-CSD107-Capstone/RanavidProject-CSD-107">
+                  <a
+                    className="inline-flex py-2.5 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-center items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <BsGithub className="mr-2 h-5 w-5" />
+                    Github
+                  </a>
+                </Link>
+                <Link href="https://ranavid.netlify.app">
+                  <a target="_blank" rel="noopener noreferrer">
+                    <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 w-full">
+                      <span className="relative px-5 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 w-full">
+                        Live Demo
+                      </span>
+                    </button>
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
       <HorizontalBreak />
+
       {/* Experience */}
       <section
         id="experience"
