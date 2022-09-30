@@ -2,11 +2,11 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { BsGithub } from "react-icons/bs";
 import ScrollToTop from "react-scroll-to-top";
 import Experiences from "../components/Experiences";
 import HorizontalBreak from "../components/HorizontalBreak";
 import Layout, { siteTitle } from "../components/Layout";
+import Projects from "../components/Projects";
 import { getAllExperiences, getAllProjects } from "../utils";
 
 interface dataFetchProps {
@@ -268,45 +268,7 @@ const Home: NextPage<dataFetchProps> = ({ experiences, projects }) => {
                 className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 p-5"
                 key={project.id}
               >
-                <Image
-                  loader={({ src }) => src}
-                  src={project.imageLink}
-                  alt={project.name}
-                  width={1280}
-                  height={1024}
-                  className="object-cover rounded-md hover:scale-110 transition-all"
-                  unoptimized={true}
-                />
-                <h5 className="mt-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {project.name}
-                </h5>
-                <p className="mb-7 font-normal text-gray-700 dark:text-gray-400">
-                  {project.description.length > 97
-                    ? project.description.slice(0, 97) + "..."
-                    : project.description}
-                </p>
-
-                <div className="grid grid-cols-2 grid-rows-1 gap-2 justify-center items-center">
-                  <Link href={project.githubLink}>
-                    <a
-                      className="inline-flex py-2.5 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-center items-center"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <BsGithub className="mr-2 h-5 w-5" />
-                      Github
-                    </a>
-                  </Link>
-                  <Link href={project.demoLink}>
-                    <a target="_blank" rel="noopener noreferrer">
-                      <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 w-full">
-                        <span className="relative px-5 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 w-full">
-                          Live Demo
-                        </span>
-                      </button>
-                    </a>
-                  </Link>
-                </div>
+                <Projects {...project} />
               </div>
             ))}
           </div>
