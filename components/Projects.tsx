@@ -29,16 +29,16 @@ const Projects = ({
         className="object-cover rounded-md hover:scale-110 transition-all"
         unoptimized={true}
       />
-      <h5 className="mt-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h5 className="mt-3 mb-2.5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {name}
       </h5>
-      <p className="mb-7 font-normal text-gray-700 dark:text-gray-400">
+      <p className="font-normal text-gray-700 dark:text-gray-400">
         {description.length > 97
           ? description.slice(0, 97) + "..."
           : description}
       </p>
 
-      <div className="grid grid-cols-2 grid-rows-1 gap-2 justify-center items-center">
+      <div className="button-projects">
         <Link href={githubLink}>
           <a
             className="inline-flex py-2.5 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-center items-center"

@@ -22,6 +22,9 @@ export default function Layout({ children }: LayoutProps) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        <meta name="theme-color" content="#111827" />
       </Head>
 
       <Header />
