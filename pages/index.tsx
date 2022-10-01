@@ -232,12 +232,12 @@ const Home: NextPage<dataFetchProps> = ({ experiences, projects }) => {
           <div className="w-full mt-0 mb-10 md:w-2/5 md:mt-0 md:mb-0">
             <Image
               loader={({ src }) => src}
-              src="https://res.cloudinary.com/ikram20/image/upload/v1664545689/portfolio/ikram_aentyz.jpg"
+              src="https://res.cloudinary.com/ikram20/image/upload/f_auto,q_auto/portfolio/ikram_aentyz.jpg"
               alt="Ikram Maulana"
               width={1440}
               height={1370}
               className="rb-lazy rounded-lg shadow-2xl object-cover"
-              unoptimized
+              unoptimized={true}
             />
             <noscript />
           </div>
