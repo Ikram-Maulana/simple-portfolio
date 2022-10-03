@@ -7,9 +7,22 @@ import Experiences from "../components/Experiences";
 import HorizontalBreak from "../components/HorizontalBreak";
 import Layout, { siteTitle } from "../components/Layout";
 import Projects from "../components/Projects";
-import { getAllExperiences, getAllProjects } from "../utils";
+import { getAllExperiences, getAllProjects, getProfile } from "../utils";
 
 interface dataFetchProps {
+  profile: {
+    data: {
+      profile: {
+        id: string;
+        name: string;
+        imageUrl: string;
+        description: string;
+        interest: string[];
+        weapon: string[];
+        socialMedia: string[];
+      }[];
+    };
+  };
   experiences: {
     data: {
       experiences: {
@@ -38,9 +51,15 @@ interface dataFetchProps {
   };
 }
 
-const Home: NextPage<dataFetchProps> = ({ experiences, projects }) => {
+const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
+  const profile_data = profile.data.profile[0];
   const experiences_data = experiences.data.experiences;
   const projects_data = projects.data.projects;
+
+  const socialMediaParser = (socialMedia: string) => {
+    const socialMediaData = JSON.parse(socialMedia);
+    return socialMediaData;
+  };
 
   return (
     <Layout>
@@ -70,17 +89,14 @@ const Home: NextPage<dataFetchProps> = ({ experiences, projects }) => {
                 className="text-center font-black mb-4 pb-1 bg-clip-text bg-gradient-to-r text-gray-800 dark:text-gray-100"
                 style={{ lineHeight: "1.1" }}
               >
-                Ikram Maulana.
+                {profile_data.name}.
               </h1>
             </div>
             <p className="text-lg sm:text-xl text-center leading-7 sm:leading-8 text-gray-700 dark:text-gray-300">
-              I am Full Stack Web Developer, Data Enthusiast and UI Designer. I
-              am very interested in the world of IT and the creative industry, I
-              am very happy to learn new things to add insight and feel
-              challenged to learn it 👨‍💻.
+              {profile_data.description} 👨‍💻.
             </p>
             <div className="flex justify-center items-center flex-col sm:flex-row mt-6">
-              <Link href={"https://www.linkedin.com/in/ikram-maulana/"}>
+              <Link href={socialMediaParser(profile_data.socialMedia[0]).url}>
                 <a
                   className="py-3 mx-2 my-2 rounded-lg font-bold translate-hover-2 hover:shadow-lg transition-all ease-in-out duration-150 px-5 bg-blue-600 text-white text-center leading-4 hover:bg-blue-700 hover:text-white"
                   target="_blank"
@@ -104,7 +120,7 @@ const Home: NextPage<dataFetchProps> = ({ experiences, projects }) => {
             >
               Hello, {"I'm "}
               <span className="text-purple-500 dark:text-purple-300">
-                Ikram Maulana
+                {profile_data.name}
               </span>
               .
             </h2>
@@ -118,8 +134,8 @@ const Home: NextPage<dataFetchProps> = ({ experiences, projects }) => {
               className="text-lg sm:text-xl mb-3 text-gray-700 dark:text-gray-300"
               style={{ lineHeight: "1.6" }}
             >
-              🔎 Main interests in Full Stack Web, UI designer &amp; Data
-              Analyst
+              🔎 Main interests in{" "}
+              {profile_data.interest.join(", ").replace(/,(?=[^,]*$)/, " &")}
             </p>
             <p
               className="text-lg sm:text-xl mb-3 text-gray-700 dark:text-gray-300"
@@ -128,97 +144,37 @@ const Home: NextPage<dataFetchProps> = ({ experiences, projects }) => {
               My preferred weapons of choice 👇
             </p>
             <div className="mt-4 w-full flex flex-col lg:flex-row lg:flex-wrap lg:justify-between">
-              <div className="flex justify-start items-center py-2 leading-tight lg:w-2/5 text-lg">
+              {profile_data.weapon.map((item, index) => (
                 <div
-                  className="flex justify-center items-center w-5 h-5 rounded-full mr-4 text-sm bg-sky-500 text-white"
-                  style={{ minWidth: "1.25rem" }}
+                  className="flex justify-start items-center py-2 leading-tight lg:w-2/5 text-lg"
+                  key={index}
                 >
-                  <svg
-                    stroke="currentColor"
-                    fill="none"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="flex justify-center items-center w-5 h-5 rounded-full mr-4 text-sm bg-sky-500 text-white"
+                    style={{ minWidth: "1.25rem" }}
                   >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
+                    <svg
+                      stroke="currentColor"
+                      fill="none"
+                      strokeWidth={2}
+                      viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <span className="dark:text-gray-100 text-sky-500">
+                    {item}
+                  </span>
                 </div>
-                <span className="dark:text-gray-100 text-sky-500">
-                  NextJS / React
-                </span>
-              </div>
-              <div className="flex justify-start items-center py-2 leading-tight lg:w-2/5 text-lg">
-                <div
-                  className="flex justify-center items-center w-5 h-5 rounded-full mr-4 text-sm bg-sky-500 text-white"
-                  style={{ minWidth: "1.25rem" }}
-                >
-                  <svg
-                    stroke="currentColor"
-                    fill="none"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </div>
-                <span className="dark:text-gray-100 text-sky-500">Python</span>
-              </div>
-              <div className="flex justify-start items-center py-2 leading-tight lg:w-2/5 text-lg">
-                <div
-                  className="flex justify-center items-center w-5 h-5 rounded-full mr-4 text-sm bg-sky-500 text-white"
-                  style={{ minWidth: "1.25rem" }}
-                >
-                  <svg
-                    stroke="currentColor"
-                    fill="none"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </div>
-                <span className="dark:text-gray-100 text-sky-500">
-                  JavaScript (NodeJS)
-                </span>
-              </div>
-              <div className="flex justify-start items-center py-2 leading-tight lg:w-2/5 text-lg">
-                <div
-                  className="flex justify-center items-center w-5 h-5 rounded-full mr-4 text-sm bg-sky-500 text-white"
-                  style={{ minWidth: "1.25rem" }}
-                >
-                  <svg
-                    stroke="currentColor"
-                    fill="none"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </div>
-                <span className="dark:text-gray-100 text-sky-500">Figma</span>
-              </div>
+              ))}
             </div>
             <div className="flex items-center flex-col sm:flex-row mt-4">
-              <Link href="https://github.com/Ikram-Maulana">
+              <Link href={socialMediaParser(profile_data.socialMedia[1]).url}>
                 <a target="_blank" rel="noopener noreferrer">
                   <button className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 w-full">
                     <span className="relative px-5 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 w-full">
@@ -232,8 +188,8 @@ const Home: NextPage<dataFetchProps> = ({ experiences, projects }) => {
           <div className="w-full mt-0 mb-10 md:w-2/5 md:mt-0 md:mb-0">
             <Image
               loader={({ src }) => src}
-              src="https://res.cloudinary.com/ikram20/image/upload/f_auto,q_auto/portfolio/ikram_aentyz.jpg"
-              alt="Ikram Maulana"
+              src={profile_data.imageUrl}
+              alt={profile_data.name}
               width={1440}
               height={1370}
               className="rb-lazy rounded-lg shadow-2xl object-cover"
@@ -311,11 +267,13 @@ const Home: NextPage<dataFetchProps> = ({ experiences, projects }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
+  const profile = await getProfile();
   const experiences = await getAllExperiences();
   const projects = await getAllProjects();
 
   return {
     props: {
+      profile,
       experiences,
       projects,
     },

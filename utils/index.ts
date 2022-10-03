@@ -17,3 +17,12 @@ export async function getAllProjects() {
     throw error;
   }
 }
+
+export async function getProfile() {
+  try {
+    const response = await axios.get(`${process.env.API_URL}/profile`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}
