@@ -26,6 +26,7 @@ const FooTer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white"
+                aria-label="Instagram"
               >
                 <Footer.Icon icon={BsInstagram} />
               </a>
@@ -35,6 +36,7 @@ const FooTer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white"
+                aria-label="Github"
               >
                 <Footer.Icon icon={BsGithub} />
               </a>
@@ -44,6 +46,7 @@ const FooTer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white"
+                aria-label="LinkedIn"
               >
                 <Footer.Icon icon={BsLinkedin} />
               </a>
@@ -53,6 +56,7 @@ const FooTer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white"
+                aria-label="Dribbble"
               >
                 <Footer.Icon icon={BsDribbble} />
               </a>
@@ -62,6 +66,7 @@ const FooTer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white"
+                aria-label="E-mail"
               >
                 <Footer.Icon icon={BsEnvelope} />
               </a>

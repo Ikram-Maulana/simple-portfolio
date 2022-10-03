@@ -29,9 +29,9 @@ const Projects = ({
         className="object-cover rounded-md image-projects"
         unoptimized={true}
       />
-      <h5 className="mt-3 mb-2.5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h2 className="mt-3 mb-2.5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {name}
-      </h5>
+      </h2>
       <p className="font-normal text-gray-700 dark:text-gray-400">
         {description.length > 83
           ? description.slice(0, 83) + "..."
