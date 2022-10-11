@@ -15,7 +15,7 @@ header {
 }
 
 footer {
-  @apply dark:bg-gray-900 px-0 shadow-none px-6 lg:px-12 !important;
+  @apply dark:bg-gray-900 shadow-none px-6 md:flex-col lg:px-12 !important;
 }
 
 nav {

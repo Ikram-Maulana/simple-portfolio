@@ -2,7 +2,6 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import ScrollToTop from "react-scroll-to-top";
 import Experiences from "../components/Experiences";
 import HorizontalBreak from "../components/HorizontalBreak";
 import Layout, { siteTitle } from "../components/Layout";
@@ -260,8 +259,6 @@ const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
           </div>
         </div>
       </section>
-
-      <ScrollToTop smooth />
     </Layout>
   );
 };
