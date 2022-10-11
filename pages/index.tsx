@@ -69,7 +69,7 @@ const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
 
       {/* Hero */}
       <section id="hero" className="bg-white dark:bg-gray-900 overflow-hidden">
-        <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 xl:py-24">
+        <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 min-h-screen flex items-center">
           <div className="max-w-xl mx-auto px-5">
             <div className="mb-4">
               <div className="flex justify-center items-center">
@@ -112,7 +112,7 @@ const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
 
       {/* About Me */}
       <section id="about" className="bg-white dark:bg-gray-900 overflow-hidden">
-        <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 lg:py-20 flex flex-no-wrap md:items-start md:space-x-8 items-start flex-col-reverse md:flex-row-reverse md:space-x-reverse">
+        <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 pb-16 lg:pb-[154px] flex flex-no-wrap md:items-start md:space-x-8 items-start flex-col-reverse md:flex-row-reverse md:space-x-reverse">
           <div className="w-full md:flex-1 flex flex-col md:pl-1/10">
             <h2
               className="mt-0 mb-4 text-gray-900 dark:text-gray-100 text-2xl sm:text-3xl font-extrabold"
@@ -207,7 +207,7 @@ const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
         id="project"
         className="bg-white dark:bg-gray-900 overflow-hidden"
       >
-        <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 xl:py-20">
+        <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-16 xl:py-[154px]">
           <div className="max-w-xl mx-auto px-5">
             <div className="text-gray-800 dark:text-gray-100 text-3xl sm:text-5xl">
               <h1
@@ -240,7 +240,7 @@ const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
         id="experience"
         className="bg-white dark:bg-gray-900 overflow-hidden"
       >
-        <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 py-12 xl:py-20">
+        <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 pt-16 lg:pt-[154px] pb-5 lg:pb-16">
           <div className="max-w-xl mx-auto px-5">
             <div className="text-gray-800 dark:text-gray-100 text-3xl sm:text-5xl">
               <h1

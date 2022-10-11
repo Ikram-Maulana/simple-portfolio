@@ -1,4 +1,5 @@
 import { Navbar } from "flowbite-react";
+import Image from "next/image";
 import ProgressBar from "react-progressbar-on-scroll";
 import { Link } from "react-scroll/modules";
 
@@ -11,8 +12,7 @@ const Header = () => {
         gradientColor="#1DB4D2"
         height={5}
       />
-      <header className="h-20 py-5">
-        <div className="max-w-5xl mx-auto">
+      <header>
           <Navbar fluid={true} rounded={true}>
             <Link
               activeClass="active"
@@ -23,9 +23,13 @@ const Header = () => {
               duration={100}
               className="cursor-pointer flex items-center"
             >
-              <span className="self-center whitespace-nowrap text-xl font-bold dark:text-white">
-                Ikram Maulana.
-              </span>
+              <Image
+                src="/icon-512x512.png"
+                alt="Ikram Logo"
+                width={42}
+                height={42}
+                className="h-6 sm:h-9"
+              />
             </Link>
             <Navbar.Toggle />
             <Navbar.Collapse>
@@ -39,7 +43,7 @@ const Header = () => {
                   duration={100}
                   className="cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white dark:text-gray-400"
                 >
-                  Home
+                  <span className="num-list">01.</span> Home
                 </Link>
               </li>
               <li>
@@ -52,7 +56,7 @@ const Header = () => {
                   duration={100}
                   className="cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white dark:text-gray-400"
                 >
-                  About
+                  <span className="num-list">02.</span> About
                 </Link>
               </li>
               <li>
@@ -65,7 +69,7 @@ const Header = () => {
                   duration={100}
                   className="cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white dark:text-gray-400"
                 >
-                  Project
+                  <span className="num-list">03.</span> Project
                 </Link>
               </li>
               <li>
@@ -78,12 +82,11 @@ const Header = () => {
                   duration={100}
                   className="cursor-pointer block py-2 pr-4 pl-3 md:p-0 border-b border-gray-100  text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white dark:text-gray-400"
                 >
-                  Experience
+                  <span className="num-list">04.</span> Experience
                 </Link>
               </li>
             </Navbar.Collapse>
           </Navbar>
-        </div>
       </header>
     </>
   );

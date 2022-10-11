@@ -11,16 +11,24 @@ body {
 }
 
 header {
-  @apply sticky z-50 top-[-20px];
+  @apply fixed z-50 top-0 py-7 flex justify-between items-center bg-[#111827]/95 backdrop-blur-sm !important;
 }
 
-nav,
 footer {
-  @apply dark:bg-gray-900 px-0 shadow-none !important;
+  @apply dark:bg-gray-900 px-0 shadow-none px-6 lg:px-12 !important;
 }
 
 nav {
-  @apply py-2.5 md:py-5 !important;
+  @apply p-0 w-screen bg-transparent font-mono shadow-none !important;
+}
+
+/* Get nav and first child div */
+nav > div {
+  @apply px-6 lg:px-12 !important;
+}
+
+nav .num-list {
+  @apply text-[#64D7FF] !important;
 }
 
 nav > div.mx-auto.flex.flex-wrap.items-center.justify-between {
@@ -36,7 +44,7 @@ nav > div.mx-auto.flex.flex-wrap.items-center.justify-between {
 }
 
 .active {
-  @apply text-white !important;
+  @apply text-[#64D7FF] !important;
 }
 
 .image-projects {
