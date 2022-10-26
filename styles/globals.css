@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 body {
@@ -15,7 +15,7 @@ header {
 }
 
 footer {
-  @apply dark:bg-gray-900 shadow-none px-6 md:flex-col lg:px-12 !important;
+  @apply dark:bg-gray-900 shadow-none px-6 lg:px-12 !important;
 }
 
 nav {
@@ -36,7 +36,7 @@ nav > div.mx-auto.flex.flex-wrap.items-center.justify-between {
 }
 
 .scroll-to-top {
-  @apply flex justify-center items-center;
+  @apply flex justify-center items-center md:bottom-16 !important;
 }
 
 .scroll-to-top > svg {
@@ -56,7 +56,7 @@ nav > div.mx-auto.flex.flex-wrap.items-center.justify-between {
 }
 
 footer > div > span {
-  @apply flex justify-center mb-4 text-[#8892B0] !important;
+  @apply flex justify-center mb-4 md:mb-0 text-[#8892B0] !important;
 }
 
 .footer-icon {
