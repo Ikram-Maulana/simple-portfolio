@@ -69,10 +69,12 @@ const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
       </Head>
 
       {/* Hero */}
-      <section id="hero" className="bg-white dark:bg-gray-900 overflow-hidden">
-        <Particle />
-        <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 min-h-screen flex items-center">
-          <div className="max-w-xl mx-auto px-5">
+      <section
+        id="hero"
+        className="bg-white dark:bg-gray-900 overflow-hidden relative"
+      >
+        <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 min-h-screen flex items-center justify-center">
+          <div className="max-w-xl mx-auto px-5 absolute z-10">
             <div className="mb-4">
               <div className="flex justify-center items-center">
                 <span
@@ -105,6 +107,7 @@ const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
               </Link>
             </div>
           </div>
+          <Particle />
         </div>
       </section>
 
