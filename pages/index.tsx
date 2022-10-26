@@ -6,6 +6,7 @@ import ScrollToTop from "react-scroll-to-top";
 import Experiences from "../components/Experiences";
 import HorizontalBreak from "../components/HorizontalBreak";
 import Layout, { siteTitle } from "../components/Layout";
+import Particle from "../components/Particle";
 import Projects from "../components/Projects";
 import { getAllExperiences, getAllProjects, getProfile } from "../utils";
 
@@ -69,6 +70,7 @@ const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
 
       {/* Hero */}
       <section id="hero" className="bg-white dark:bg-gray-900 overflow-hidden">
+        <Particle />
         <div className="mx-auto px-5 sm:w-11/12 xl:w-3/4 2xl:w-2/3 min-h-screen flex items-center">
           <div className="max-w-xl mx-auto px-5">
             <div className="mb-4">
@@ -173,7 +175,7 @@ const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
               ))}
             </div>
             <div className="flex items-center flex-col sm:flex-row mt-4">
-            <Link href={socialMediaParser(profile_data.socialMedia[1]).url}>
+              <Link href={socialMediaParser(profile_data.socialMedia[1]).url}>
                 <a
                   className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-[#64D7FF] dark:text-[#64D7FF] dark:hover:text-white dark:hover:bg-[#64D7FF]/10"
                   target="_blank"

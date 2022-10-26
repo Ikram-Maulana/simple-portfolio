@@ -11,7 +11,15 @@ body {
 }
 
 header {
-  @apply fixed z-50 top-0 py-7 flex justify-between items-center bg-[#111827]/90 backdrop-blur-sm !important;
+  @apply fixed z-50 top-0 py-7 flex justify-between items-center !important;
+}
+
+.appBarSolid {
+  @apply bg-[#111827]/90 backdrop-blur-sm !important;
+}
+
+.appBarTransparent {
+  @apply bg-transparent backdrop-blur-none !important;
 }
 
 footer {

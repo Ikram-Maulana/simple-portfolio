@@ -18,7 +18,9 @@
     "react-progressbar-on-scroll": "^2.0.0",
     "react-scroll": "^1.8.8",
     "react-scroll-to-top": "^3.0.0",
-    "sharp": "^0.31.1"
+    "react-tsparticles": "^2.3.3",
+    "sharp": "^0.31.1",
+    "tsparticles": "^2.3.4"
   },
   "devDependencies": {
     "@types/node": "18.11.5",
