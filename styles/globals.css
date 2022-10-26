@@ -22,6 +22,14 @@ header {
   @apply bg-transparent backdrop-blur-none !important;
 }
 
+.appBarChildSolid > nav > div > div > ul {
+  @apply bg-[#111827] backdrop-blur-sm rounded-md md:bg-transparent md:backdrop-blur-none md:p-0 md:rounded-none !important;
+}
+
+.appBarChildTransparent > nav > div > div > ul {
+  @apply bg-transparent backdrop-blur-none rounded-none !important;
+}
+
 footer {
   @apply dark:bg-gray-900 shadow-none px-6 lg:px-12 !important;
 }

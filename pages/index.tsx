@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import ScrollToTop from "react-scroll-to-top";
 import Experiences from "../components/Experiences";
@@ -95,14 +95,13 @@ const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
               {profile_data.description} 👨‍💻.
             </p>
             <div className="flex justify-center items-center flex-col sm:flex-row mt-6">
-              <Link href={socialMediaParser(profile_data.socialMedia[0]).url}>
-                <a
-                  className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-4 text-center mr-2 mb-2 dark:border-[#64D7FF] dark:text-[#64D7FF] dark:hover:text-white dark:hover:bg-[#64D7FF]/10"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Do You Want To Work With Me?
-                </a>
+              <Link
+                href={socialMediaParser(profile_data.socialMedia[0]).url}
+                className="z-1 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-4 text-center mr-2 mb-2 dark:border-[#64D7FF] dark:text-[#64D7FF] dark:hover:text-white dark:hover:bg-[#64D7FF]/10"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Do You Want To Work With Me?
               </Link>
             </div>
           </div>
@@ -175,14 +174,13 @@ const Home: NextPage<dataFetchProps> = ({ profile, experiences, projects }) => {
               ))}
             </div>
             <div className="flex items-center flex-col sm:flex-row mt-4">
-              <Link href={socialMediaParser(profile_data.socialMedia[1]).url}>
-                <a
-                  className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-[#64D7FF] dark:text-[#64D7FF] dark:hover:text-white dark:hover:bg-[#64D7FF]/10"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  My Github
-                </a>
+              <Link
+                href={socialMediaParser(profile_data.socialMedia[1]).url}
+                className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-[#64D7FF] dark:text-[#64D7FF] dark:hover:text-white dark:hover:bg-[#64D7FF]/10"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                My Github
               </Link>
             </div>
           </div>

@@ -1,20 +1,21 @@
 import { Navbar } from "flowbite-react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useEffect, useRef, useState } from "react";
 import ProgressBar from "react-progressbar-on-scroll";
 import { Link } from "react-scroll/modules";
 
 const Header = () => {
-  const [navBackground, setNavBackground] = useState("appBarTransparent");
-  const navRef = useRef<string>();
+  const [navBackground, setNavBackground] = useState(["appBarTransparent", "appBarChildSolid"]);
+  const navRef = useRef<string[]>();
   navRef.current = navBackground;
+
   useEffect(() => {
     const handleScroll = () => {
       const show = window.scrollY > 200;
       if (show) {
-        setNavBackground("appBarSolid");
+        setNavBackground(["appBarSolid", "appBarChildTransparent"]);
       } else {
-        setNavBackground("appBarTransparent");
+        setNavBackground(["appBarTransparent", "appBarChildSolid"]);
       }
     };
     document.addEventListener("scroll", handleScroll);
@@ -31,7 +32,7 @@ const Header = () => {
         gradientColor="#1DB4D2"
         height={5}
       />
-      <header className={`${navRef.current} transition-all`}>
+      <header className={`${navRef.current[0]} ${navRef.current[1]} transition-all`}>
         <Navbar fluid={true} rounded={true}>
           <Link
             activeClass="active"

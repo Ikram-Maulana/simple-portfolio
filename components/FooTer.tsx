@@ -20,55 +20,50 @@ const FooTer = () => {
           year={currentYear}
         />
         <div className="footer-icon">
-          <Link href="https://instagram.com/ikram_maulana">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white"
-              aria-label="Instagram"
-            >
-              <Footer.Icon icon={BsInstagram} />
-            </a>
+          <Link
+            href="https://instagram.com/ikram_maulana"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+            aria-label="Instagram"
+          >
+            <Footer.Icon icon={BsInstagram} />
           </Link>
-          <Link href="https://github.com/ikram-maulana">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white"
-              aria-label="Github"
-            >
-              <Footer.Icon icon={BsGithub} />
-            </a>
+          <Link
+            href="https://github.com/ikram-maulana"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+            aria-label="Github"
+          >
+            <Footer.Icon icon={BsGithub} />
           </Link>
-          <Link href="https://linkedin.com/ikram-maulana">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white"
-              aria-label="LinkedIn"
-            >
-              <Footer.Icon icon={BsLinkedin} />
-            </a>
+          <Link
+            href="https://linkedin.com/ikram-maulana"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+            aria-label="LinkedIn"
+          >
+            <Footer.Icon icon={BsLinkedin} />
           </Link>
-          <Link href="https://dribbble.com/ikram_maulana">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white"
-              aria-label="Dribbble"
-            >
-              <Footer.Icon icon={BsDribbble} />
-            </a>
+          <Link
+            href="https://dribbble.com/ikram_maulana"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+            aria-label="Dribbble"
+          >
+            <Footer.Icon icon={BsDribbble} />
           </Link>
-          <Link href="mailto:ikram_maulana@onedrive.web.id">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white"
-              aria-label="E-mail"
-            >
-              <Footer.Icon icon={BsEnvelope} />
-            </a>
+          <Link
+            href="mailto:ikram_maulana@onedrive.web.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+            aria-label="E-mail"
+          >
+            <Footer.Icon icon={BsEnvelope} />
           </Link>
         </div>
       </Footer>
