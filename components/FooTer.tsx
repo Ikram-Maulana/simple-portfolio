@@ -13,7 +13,7 @@ const FooTer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="sm:h-20 py-5 sm:sticky top-0">
+    <div className="sm:h-20 py-2">
       <Footer container={true}>
         <Footer.Copyright
           by="Ikram Maulana, All Right Reserved."

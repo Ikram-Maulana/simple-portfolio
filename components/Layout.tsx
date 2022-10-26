@@ -1,5 +1,4 @@
 import Head from "next/head";
-import ScrollToTop from "react-scroll-to-top";
 import FooTer from "./FooTer";
 import Header from "./Header";
 
@@ -30,7 +29,6 @@ export default function Layout({ children }: LayoutProps) {
 
       <Header />
       <main>{children}</main>
-      <ScrollToTop smooth />
       <FooTer />
     </div>
   );
