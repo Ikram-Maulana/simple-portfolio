@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  @apply fixed z-50 top-0 py-7 flex justify-between items-center bg-[#111827]/95 backdrop-blur-sm !important;
+  @apply fixed z-50 top-0 py-7 flex justify-between items-center bg-[#111827]/90 backdrop-blur-sm !important;
 }
 
 footer {
@@ -56,9 +56,13 @@ nav > div.mx-auto.flex.flex-wrap.items-center.justify-between {
 }
 
 footer > div > span {
-  @apply flex justify-center mb-4;
+  @apply flex justify-center mb-4 text-[#8892B0] !important;
 }
 
 .footer-icon {
   @apply flex space-x-6 mt-0 justify-center;
+}
+
+.footer-icon > a > div > svg {
+  @apply text-[#CCD6F6] !important;
 }
