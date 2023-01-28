@@ -13,8 +13,6 @@ export default function Head() {
       />
       <meta name="og:title" content="Ikram Maulana Portfolio" />
       <meta name="twitter:card" content="summary_large_image" />
-      <link rel="manifest" href="/manifest.json" />
-      <link rel="apple-touch-icon" href="/icon-192x192.png" />
       <meta name="theme-color" content="#000000" />
     </>
   );

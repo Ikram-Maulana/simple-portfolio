@@ -1,45 +1,46 @@
 import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "./page.module.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-});
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.center}>
-        <div className={styles.brand}>
-          <div className={styles.thirteen}>
-            <Image
-              src="/ikramlogo.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
+    <main className="h-screen flex flex-col justify-center items-center text-black dark:text-white">
+      {/* White Logo */}
+      <div className="drop-shadow-md block dark:hidden">
+        <Image
+          src="/logo.png"
+          alt="Ikram Maulana Logo"
+          width={75}
+          height={75}
+          priority
+        />
+      </div>
 
-        <div className={inter.className}>
-          <div className={styles.content}>
-            <h1 className={styles.title}>Down for Maintenance 🛠️</h1>
-            <p className={styles.contentText}>
-              Ikram Maulana&apos;s Portfolio Web is currently undergoing planned
-              maintenance. I&apos;ll be back with an better website experience.
-              Follow me on{" "}
-              <a
-                href="https://github.com/Ikram-Maulana"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Github
-              </a>{" "}
-              for updates.
-            </p>
-          </div>
-        </div>
+      {/* Dark Logo */}
+      <div className="drop-shadow-md hidden dark:block">
+        <Image
+          src="/logo-dark.png"
+          alt="Ikram Maulana Logo"
+          width={75}
+          height={75}
+          priority
+        />
+      </div>
+
+      <div className="flex flex-col items-center max-w-xl lg:max-w-2xl p-4 text-center">
+        <h1 className="text-4xl font-bold mb-4">Down for Maintenance 🛠️</h1>
+        <p>
+          Ikram Maulana&apos;s Portfolio Web is currently undergoing planned
+          maintenance. I&apos;ll be back with an better website experience.
+          Follow me on{" "}
+          <a
+            href="https://github.com/Ikram-Maulana"
+            target="_blank"
+            rel="noreferrer"
+            className="font-bold"
+          >
+            Github
+          </a>{" "}
+          for updates.
+        </p>
       </div>
     </main>
   );
