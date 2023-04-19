@@ -1,3 +1,5 @@
+const { Tokens } = require("./mirrorful/.mirrorful/theme_cjs.js");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -16,6 +18,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        ...Tokens.colors,
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
