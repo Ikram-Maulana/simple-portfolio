@@ -37,15 +37,15 @@ export default function MainNav({ items, children }: MainNavProps) {
 
   return (
     <header className="absolute top-0 left-0 z-10 flex items-center w-full h-20 transition-all bg-transparent font-montserrat">
-      <div className="container md:max-w-2xl lg:max-w-5xl">
+      <div className="container max-w-sm md:max-w-2xl lg:max-w-5xl">
         <div className="relative flex items-center justify-between">
-          <div className="pl-4">
+          <div className="brand">
             <Link href="/" className="block py-6 text-xl font-bold">
               Ikram Maulana
             </Link>
           </div>
 
-          <div className="flex items-center pr-4">
+          <div className="flex items-center">
             <Button
               className="block px-2 md:hidden"
               variant="outline"
