@@ -1,3 +1,4 @@
+import { montserrat, poppins } from "./fonts";
 import "./globals.css";
 import "@total-typescript/ts-reset";
 
@@ -12,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${montserrat.className} ${poppins.className}`}>
       <body>{children}</body>
     </html>
   );
