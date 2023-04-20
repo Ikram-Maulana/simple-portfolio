@@ -2,6 +2,7 @@ import { RootLayoutProps } from "@/types";
 import "@total-typescript/ts-reset";
 import { montserrat, poppins } from "../assets/fonts";
 import "../styles/globals.css";
+import { Tokens } from "../../mirrorful/.mirrorful/theme";
 
 export const metadata = {
   title: "Ikram Maulana",
@@ -58,7 +59,13 @@ export const metadata = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${montserrat.variable} ${poppins.variable}`}>
-      <body>{children}</body>
+      <body
+        style={{
+          backgroundColor: Tokens.colors["old-lace"]["base"],
+        }}
+      >
+        {children}
+      </body>
     </html>
   );
 }
