@@ -57,7 +57,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={`${montserrat.className} ${poppins.className}`}>
+    <html lang="en" className={`${montserrat.variable} ${poppins.variable}`}>
       <body>{children}</body>
     </html>
   );
