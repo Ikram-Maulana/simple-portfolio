@@ -1,6 +1,7 @@
-import { montserrat, poppins } from "./fonts";
-import "./globals.css";
+import { RootLayoutProps } from "@/types";
 import "@total-typescript/ts-reset";
+import { montserrat, poppins } from "../assets/fonts";
+import "../styles/globals.css";
 
 export const metadata = {
   title: "Ikram Maulana",
@@ -15,11 +16,18 @@ export const metadata = {
     "Full Stack Web Developer",
     "React Developer",
   ],
+  authors: [
+    {
+      name: "Ikram Maulana",
+      url: "https://ikram-maulana.tech",
+    },
+  ],
+  creator: "Ikram Maulana",
   openGraph: {
+    type: "website",
     title: "Ikram Maulana Portfolio",
     description:
       "Discover the personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
-    type: "website",
     url: "https://ikram-maulana.tech",
     site_name: "Ikram Maulana Portfolio",
   },
@@ -37,7 +45,8 @@ export const metadata = {
     },
   },
   icons: {
-    icon: "/icon.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
     apple: "/apple-icon.png",
     other: {
       rel: "apple-touch-icon-precomposed",
@@ -46,11 +55,7 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${montserrat.className} ${poppins.className}`}>
       <body>{children}</body>
