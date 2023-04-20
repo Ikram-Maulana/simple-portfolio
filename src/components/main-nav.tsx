@@ -40,7 +40,10 @@ export default function MainNav({ items, children }: MainNavProps) {
       <div className="container max-w-sm md:max-w-2xl lg:max-w-5xl">
         <div className="relative flex items-center justify-between">
           <div className="brand">
-            <Link href="/" className="block py-6 text-xl font-bold">
+            <Link
+              href="/"
+              className="block py-6 text-xl font-bold text-tprimary"
+            >
               Ikram Maulana
             </Link>
           </div>
