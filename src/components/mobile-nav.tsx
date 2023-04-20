@@ -10,7 +10,7 @@ export default function MobileNav({ items, children }: MobileNavProps) {
   return (
     <div
       className={cn(
-        "fixed inset-0 top-[72px] z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto py-6 px-12 pb-32 shadow-md animate-in slide-in-from-bottom-80 md:hidden"
+        "fixed inset-0 top-[72px] z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto py-6 max-w-sm mx-auto px-8 pb-32 animate-in slide-in-from-bottom-80 md:hidden"
       )}
     >
       <div className="relative z-20 grid gap-6 p-4 bg-white rounded-md shadow-md">
