@@ -37,7 +37,7 @@ export const metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.png",
     apple: "/apple-icon.png",
     other: {
       rel: "apple-touch-icon-precomposed",
