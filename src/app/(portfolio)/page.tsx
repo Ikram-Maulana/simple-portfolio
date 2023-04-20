@@ -9,7 +9,7 @@ export default function Home() {
       <section id="hero" className="py-36 lg:py-52">
         <div className="container max-w-sm md:max-w-2xl lg:max-w-5xl">
           <div className="grid items-center grid-cols-1 gap-14 lg:grid-cols-2 md:px-8">
-            <div className="relative flex items-center justify-center lg:col-start-2 lg:col-end-3">
+            <div className="relative z-0 flex items-center justify-center lg:col-start-2 lg:col-end-3">
               <div
                 id="decoration-1"
                 className="absolute right-0 z-10 w-1/4 lg:w-1/3 -top-8 md:-top-14 lg:-top-16 h-1/3"
