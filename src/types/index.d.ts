@@ -27,3 +27,18 @@ export type Layout = {
 export type RootLayoutProps = Layout;
 
 export type PortfolioLayoutProps = Layout;
+
+export type SocialItem = {
+  name: string;
+  href: string;
+};
+
+export type MainSocialItem = SocialItem;
+
+export interface SocialConfig {
+  socials: MainSocialItem[];
+}
+
+interface SocialListProps {
+  items: MainSocialItem[];
+}
