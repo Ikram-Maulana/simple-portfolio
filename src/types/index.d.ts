@@ -57,3 +57,8 @@ export interface TechConfig {
 export interface TechListProps {
   items: MainTechItem[];
 }
+
+export interface SectionHeaderProps {
+  title: string;
+  description: string;
+}

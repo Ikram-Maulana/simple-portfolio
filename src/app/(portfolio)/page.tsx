@@ -1,9 +1,9 @@
+import SectionHeader from "@/components/section-header";
 import SocialList from "@/components/social-list";
-import { socialConfig } from "@/config/socials";
-import Image from "next/image";
-import { Tokens } from "../../../mirrorful/.mirrorful/theme";
 import TechList from "@/components/tech-list";
+import { socialConfig } from "@/config/socials";
 import { techConfig } from "@/config/tech";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -62,17 +62,10 @@ export default function Home() {
       <section id="tech-stack" className="pt-36 lg:pt-52 pb-16">
         <div className="container max-w-sm md:max-w-2xl lg:max-w-5xl">
           <div className="grid items-center grid-rows-1 gap-14 md:px-8">
-            <div className="flex flex-col items-center text-center">
-              <p
-                className="text-lg font-bold"
-                style={{ color: Tokens.colors["fire-opal"]["base"] }}
-              >
-                Tech Stack
-              </p>
-              <h2 className="scroll-m-20 text-2xl font-extrabold tracking-tight transition-colors first:mt-0 text-tprimary font-montserrat">
-                Dynamic technology choices for dynamic projects 🔥
-              </h2>
-            </div>
+            <SectionHeader
+              title="Tech Stack"
+              description="Dynamic technology choices for dynamic projects 🔥"
+            />
             <TechList items={techConfig.techs} />
           </div>
         </div>
