@@ -39,6 +39,21 @@ export interface SocialConfig {
   socials: MainSocialItem[];
 }
 
-interface SocialListProps {
+export interface SocialListProps {
   items: MainSocialItem[];
+}
+
+export type TechItem = {
+  name: string;
+  image: string;
+};
+
+export type MainTechItem = TechItem;
+
+export interface TechConfig {
+  techs: MainTechItem[];
+}
+
+export interface TechListProps {
+  items: MainTechItem[];
 }

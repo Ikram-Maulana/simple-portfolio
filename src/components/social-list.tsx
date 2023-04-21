@@ -1,20 +1,14 @@
-"use client";
-
 import { SocialListProps } from "@/types";
-import { useHover } from "@mantine/hooks";
 import { Github, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
 
 export default function SocialList({ items }: SocialListProps) {
-  const { hovered, ref } = useHover();
-
   return (
     <>
       {items?.length ? (
         <ul className="flex items-center justify-center mt-8 space-x-6 md:justify-start">
           {items.map((item, index) => (
-            <div key={index} ref={ref}>
+            <div key={index}>
               <li>
                 <Link
                   href={item.href}
