@@ -12,7 +12,6 @@ export default function TechList({ items }: TechListProps) {
   return (
     <>
       {items?.length ? (
-        // make the grid items in the center, and make the grid responsive
         <div className="flex justify-center items-center flex-wrap gap-6">
           {items.map((item, index) => (
             <TooltipProvider key={index}>
@@ -28,7 +27,6 @@ export default function TechList({ items }: TechListProps) {
                     width="100"
                     height="100"
                     alt={item.name}
-                    className="rounded-md"
                   />
                 </TooltipTrigger>
                 <TooltipContent>
