@@ -4,12 +4,20 @@ import TechList from "@/components/tech-list";
 import { socialConfig } from "@/config/socials";
 import { techConfig } from "@/config/tech";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const DynamicContactNoSSR = dynamic(
+  () => import("@/components/contact-section"),
+  {
+    ssr: false,
+  }
+);
 
 export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section id="hero" className="pt-36 lg:pt-52 pb-16">
+      <section id="hero" className="pb-16 pt-36 lg:pt-52">
         <div className="container max-w-sm md:max-w-2xl lg:max-w-5xl">
           <div className="grid items-center grid-cols-1 gap-14 lg:grid-cols-2 md:px-8">
             <div className="relative z-0 flex items-center justify-center lg:col-start-2 lg:col-end-3">
@@ -59,7 +67,7 @@ export default function Home() {
       {/* End Hero Section */}
 
       {/* Tech Stack Section */}
-      <section id="tech-stack" className="pt-36 lg:pt-52 pb-16">
+      <section id="tech-stack" className="pb-16 pt-36 lg:pt-52">
         <div className="container max-w-sm md:max-w-2xl lg:max-w-5xl">
           <div className="grid items-center grid-rows-1 gap-14 md:px-8">
             <SectionHeader
@@ -71,6 +79,10 @@ export default function Home() {
         </div>
       </section>
       {/* End Tech Stack Section */}
+
+      {/* Contact Section */}
+      <DynamicContactNoSSR />
+      {/* End Contact Section */}
     </main>
   );
 }

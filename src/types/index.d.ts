@@ -62,3 +62,9 @@ export interface SectionHeaderProps {
   title: string;
   description: string;
 }
+
+export interface ContactCircleProps {
+  to: string;
+  className?: string;
+  style?: React.CSSProperties;
+}
