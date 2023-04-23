@@ -1,12 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import { useMouse } from "@mantine/hooks";
+import { useHover, useMouse } from "@mantine/hooks";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
-import ContactCircle from "./contact-circle";
+import { Tokens } from "../../mirrorful/.mirrorful/theme";
 import SectionHeader from "./section-header";
 
 export default function ContactSection() {
+  const { hovered, ref: refHovered } = useHover();
   const { ref, x, y } = useMouse({ resetOnExit: true });
   const contactFollow = document.querySelector(".follow");
   const contactContainer = document.getElementById("anchor");
@@ -49,10 +52,33 @@ export default function ContactSection() {
             title="Contact"
             description="Don’t be shy, let’s have a chat with me 🖐️"
           />
-          <ContactCircle
-            className="transition-all ease-out follow"
-            to="mailto:ikram_maulana@onedrive.web.id"
-          />
+
+          <Link href="mailto:ikram_maulana@onedrive.web.id">
+            <div className="relative cursor-pointer" ref={refHovered}>
+              <div
+                id="anchor"
+                className="flex items-center justify-center rounded-full h-36 w-36 outline-dashed outline-2"
+                style={{
+                  outlineColor: Tokens.colors["fire-opal"]["base"],
+                }}
+              ></div>
+              <div
+                className="absolute top-0 flex items-center justify-center transition-all ease-out rounded-full follow h-36 w-36 outline outline-2"
+                style={{
+                  backgroundColor: Tokens.colors["fire-opal"]["base"],
+                }}
+              >
+                <Image
+                  src="/images/contact-text.png"
+                  width={120}
+                  height={120}
+                  alt="Contact Me"
+                  className="animate-spin-slow"
+                />
+                <div className="absolute text-2xl">{hovered ? "🖐️" : "✊"}</div>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
