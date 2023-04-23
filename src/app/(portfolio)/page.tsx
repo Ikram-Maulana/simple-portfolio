@@ -79,7 +79,6 @@ export default function Home() {
 
       {/* Contact Section */}
       <ContactSection />
-      {/* <DynamicContactNoSSR /> */}
       {/* End Contact Section */}
     </main>
   );

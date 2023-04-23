@@ -49,6 +49,9 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  react-scroll-to-top:
+    specifier: ^3.0.0
+    version: 3.0.0(react@18.2.0)
   tailwind-merge:
     specifier: ^1.12.0
     version: 1.12.0
@@ -2412,6 +2415,14 @@ packages:
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: false
+
+  /react-scroll-to-top@3.0.0(react@18.2.0):
+    resolution: {integrity: sha512-I/k45Ujai097du59tHBbzGxN7Lyc6K8Uc3IChq6HMXaBfB8N/rrfm055T5Yv0DWfVpf6pOFaBmhD3LOfH5unGw==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react@18.2.0:
