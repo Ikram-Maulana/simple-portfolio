@@ -6,12 +6,9 @@ import { techConfig } from "@/config/tech";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
-const DynamicContactNoSSR = dynamic(
-  () => import("@/components/contact-section"),
-  {
-    ssr: false,
-  }
-);
+const ContactSection = dynamic(() => import("@/components/contact-section"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -81,7 +78,8 @@ export default function Home() {
       {/* End Tech Stack Section */}
 
       {/* Contact Section */}
-      <DynamicContactNoSSR />
+      <ContactSection />
+      {/* <DynamicContactNoSSR /> */}
       {/* End Contact Section */}
     </main>
   );

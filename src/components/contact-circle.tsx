@@ -1,3 +1,5 @@
+"use client";
+
 import { ContactCircleProps } from "@/types";
 import { useHover } from "@mantine/hooks";
 import Image from "next/image";
