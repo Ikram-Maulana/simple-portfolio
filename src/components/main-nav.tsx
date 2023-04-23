@@ -10,7 +10,7 @@ import { useSelectedLayoutSegment } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Tokens } from "../../mirrorful/.mirrorful/theme";
 import MobileNav from "./mobile-nav";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 
 export default function MainNav({ items, children }: MainNavProps) {
   const segment = useSelectedLayoutSegment();
@@ -35,15 +35,6 @@ export default function MainNav({ items, children }: MainNavProps) {
       setShowMobileMenu(false);
     }
   }, [width, showMobileMenu]);
-
-  const onClickHandler = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    window.open(
-      "https://drive.google.com/file/d/1K-Y2DcVpoQc6FeUlqMez_Mca8U-DYJr-/view?usp=share_link",
-      "_blank",
-      "noopener,noreferrer"
-    );
-  };
 
   return (
     <header className="absolute top-0 left-0 z-10 flex items-center w-full h-20 transition-all bg-transparent font-montserrat">
@@ -104,7 +95,8 @@ export default function MainNav({ items, children }: MainNavProps) {
                   </Link>
                 ))}
                 <div ref={ref}>
-                  <Button
+                  <Link
+                    className={buttonVariants()}
                     style={
                       hovered
                         ? {
@@ -114,10 +106,12 @@ export default function MainNav({ items, children }: MainNavProps) {
                             backgroundColor: Tokens.colors["fire-opal"]["base"],
                           }
                     }
-                    onClick={onClickHandler}
+                    href="https://drive.google.com/file/d/1K-Y2DcVpoQc6FeUlqMez_Mca8U-DYJr-/view?usp=share_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Resume
-                  </Button>
+                  </Link>
                 </div>
               </nav>
             ) : null}
