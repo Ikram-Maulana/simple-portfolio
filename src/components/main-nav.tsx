@@ -36,6 +36,15 @@ export default function MainNav({ items, children }: MainNavProps) {
     }
   }, [width, showMobileMenu]);
 
+  const onClickHandler = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.open(
+      "https://drive.google.com/file/d/1K-Y2DcVpoQc6FeUlqMez_Mca8U-DYJr-/view?usp=share_link",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
     <header className="absolute top-0 left-0 z-10 flex items-center w-full h-20 transition-all bg-transparent font-montserrat">
       <div className="container max-w-sm md:max-w-2xl lg:max-w-5xl">
@@ -105,6 +114,7 @@ export default function MainNav({ items, children }: MainNavProps) {
                             backgroundColor: Tokens.colors["fire-opal"]["base"],
                           }
                     }
+                    onClick={onClickHandler}
                   >
                     Resume
                   </Button>

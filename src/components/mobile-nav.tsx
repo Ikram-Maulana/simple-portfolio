@@ -2,8 +2,8 @@ import { useLockBody } from "@/hooks/use-lock-body";
 import { cn } from "@/lib/utils";
 import { MobileNavProps } from "@/types";
 import Link from "next/link";
-import { Separator } from "./ui/separator";
 import { Tokens } from "../../mirrorful/.mirrorful/theme";
+import { Separator } from "./ui/separator";
 
 export default function MobileNav({ items, children }: MobileNavProps) {
   useLockBody();
@@ -39,10 +39,12 @@ export default function MobileNav({ items, children }: MobileNavProps) {
             <Separator />
           </div>
           <Link
-            href="#"
+            href="https://drive.google.com/file/d/1K-Y2DcVpoQc6FeUlqMez_Mca8U-DYJr-/view?usp=share_link"
             className={cn(
               "flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline"
             )}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Resume
           </Link>
