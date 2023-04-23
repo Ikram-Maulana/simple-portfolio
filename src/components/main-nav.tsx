@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { MainNavProps } from "@/types";
 import { useHover, useViewportSize, useWindowScroll } from "@mantine/hooks";
 import { AlignJustify, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -44,7 +45,12 @@ export default function MainNav({ items, children }: MainNavProps) {
               href="/"
               className="block py-6 text-xl font-bold text-tprimary"
             >
-              Ikram Maulana
+              <Image
+                src="/images/avatar.png"
+                width={40}
+                height={40}
+                alt="Logo"
+              />
             </Link>
           </div>
 
