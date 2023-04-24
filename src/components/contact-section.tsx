@@ -74,6 +74,10 @@ export default function ContactSection() {
                   height={120}
                   alt="Contact Me"
                   className="animate-spin-slow"
+                  style={{
+                    height: "auto",
+                    width: "auto",
+                  }}
                 />
                 <div className="absolute text-2xl">{hovered ? "🖐️" : "✊"}</div>
               </div>
