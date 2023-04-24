@@ -2,21 +2,21 @@
 
 import { cn } from "@/lib/utils";
 import { MainNavProps } from "@/types";
-import { useHover, useViewportSize, useWindowScroll } from "@mantine/hooks";
+import { useViewportSize, useWindowScroll } from "@mantine/hooks";
 import { AlignJustify, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Tokens } from "../../mirrorful/.mirrorful/theme";
+import ButtonAccent from "./button-accent";
 import MobileNav from "./mobile-nav";
-import { Button, buttonVariants } from "./ui/button";
+import { Button } from "./ui/button";
 
 export default function MainNav({ items, children }: MainNavProps) {
   const segment = useSelectedLayoutSegment();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [scroll] = useWindowScroll();
-  const { hovered, ref } = useHover();
   const { width } = useViewportSize();
 
   useEffect(() => {
@@ -94,25 +94,12 @@ export default function MainNav({ items, children }: MainNavProps) {
                     {item.title}
                   </Link>
                 ))}
-                <div ref={ref}>
-                  <Link
-                    className={buttonVariants()}
-                    style={
-                      hovered
-                        ? {
-                            backgroundColor: Tokens.colors["fire-opal"]["400"],
-                          }
-                        : {
-                            backgroundColor: Tokens.colors["fire-opal"]["base"],
-                          }
-                    }
-                    href="https://drive.google.com/file/d/1K-Y2DcVpoQc6FeUlqMez_Mca8U-DYJr-/view?usp=share_link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Resume
-                  </Link>
-                </div>
+                <ButtonAccent
+                  url="https://drive.google.com/file/d/1K-Y2DcVpoQc6FeUlqMez_Mca8U-DYJr-/view?usp=share_link"
+                  newTab
+                >
+                  Resume
+                </ButtonAccent>
               </nav>
             ) : null}
             {showMobileMenu && <MobileNav items={items}>{children}</MobileNav>}
