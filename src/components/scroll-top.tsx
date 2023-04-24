@@ -10,6 +10,7 @@ export default function ScrollTop() {
       className="flex items-center justify-center p-3 outline outline-1"
       style={{
         backgroundColor: Tokens.colors["old-lace"]["base"],
+        boxShadow: "0 9px 25px 0 rgba(235, 84, 85, 0.28)",
       }}
     />
   );
