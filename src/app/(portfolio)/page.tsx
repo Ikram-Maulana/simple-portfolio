@@ -1,33 +1,32 @@
+import ButtonAccent from "@/components/button-accent";
 import ProjectCard from "@/components/project-card";
 import SectionHeader from "@/components/section-header";
 import SocialList from "@/components/social-list";
 import TechList from "@/components/tech-list";
 import { socialConfig } from "@/config/socials";
 import { techConfig } from "@/config/tech";
-import { MainProjectItem } from "@/types";
+import prisma from "@/lib/prisma";
+import { ArrowRight } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Tokens } from "../../../mirrorful/.mirrorful/theme";
-import ButtonAccent from "@/components/button-accent";
-import { ArrowRight } from "lucide-react";
 
 const ContactSection = dynamic(() => import("@/components/contact-section"), {
   ssr: false,
 });
 
-const getFeaturedProjects = async (): Promise<MainProjectItem> => {
-  let baseUrl = "http://localhost:3000";
-  if (process.env.VERCEL_URL) {
-    baseUrl = process.env.VERCEL_URL;
+const getFeaturedProjects = async () => {
+  try {
+    const projects = await prisma.projects.findMany({
+      where: {
+        featured: true,
+      },
+    });
+
+    return projects;
+  } catch (error) {
+    return [];
   }
-  console.log(baseUrl);
-  const res = await fetch(`${baseUrl}/projects/api`, {
-    next: {
-      revalidate: 60,
-    },
-  });
-  const data = await res.json();
-  return (data as { data: MainProjectItem }).data;
 };
 
 export default async function Home() {

@@ -74,7 +74,7 @@ export type ProjectItem = {
   name: string;
   description: string;
   image_url: string;
-  techs: {
+  techs?: {
     name: string;
   }[];
   github_url: string;
