@@ -18,11 +18,9 @@ const ContactSection = dynamic(() => import("@/components/contact-section"), {
 const getFeaturedProjects = async (): Promise<MainProjectItem> => {
   let baseUrl = "http://localhost:3000";
   if (process.env.VERCEL_URL) {
-    baseUrl =
-      process.env.VERCEL_URL === "https://ikram-maulana.tech"
-        ? "https://ikram-maulana.tech"
-        : process.env.VERCEL_URL;
+    baseUrl = process.env.VERCEL_URL;
   }
+  console.log(baseUrl);
   const res = await fetch(`${baseUrl}/projects/api`, {
     next: {
       revalidate: 60,
