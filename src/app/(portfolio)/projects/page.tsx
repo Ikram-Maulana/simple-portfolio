@@ -15,7 +15,7 @@ const getProjects = async () => {
   }
 };
 
-export default async function page() {
+export default async function Projects() {
   const projects = await getProjects();
 
   return (
@@ -23,7 +23,7 @@ export default async function page() {
       {/* Projects Section */}
       <section id="projects" className="pb-16 pt-36">
         <div className="container max-w-sm md:max-w-2xl lg:max-w-5xl">
-          <div className="grid items-center grid-rows-1 gap-10 md:px-8">
+          <div className="grid items-center grid-rows-1 gap-11 md:px-8">
             <div>
               <h1 className="text-2xl font-extrabold tracking-tight transition-colors scroll-m-20 first:mt-0 text-tprimary font-montserrat">
                 Projects
@@ -55,19 +55,21 @@ export default async function page() {
               )}
             </div>
 
-            <small className="text-sm font-medium leading-none text-center">
-              Hey, hey, hey... I&apos;ve got even more on{" "}
-              <Link
-                href="https://github.com/ikram-maulana"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: Tokens.colors["fire-opal"]["base"],
-                }}
-              >
-                My Github!
-              </Link>
-            </small>
+            {projects.length > 0 && (
+              <small className="text-sm font-medium leading-none text-center">
+                Hey, hey, hey... I&apos;ve got even more on{" "}
+                <Link
+                  href="https://github.com/ikram-maulana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: Tokens.colors["fire-opal"]["base"],
+                  }}
+                >
+                  My Github!
+                </Link>
+              </small>
+            )}
           </div>
         </div>
       </section>
