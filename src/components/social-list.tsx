@@ -1,5 +1,5 @@
 import { SocialListProps } from "@/types";
-import { Github, Instagram, Linkedin } from "lucide-react";
+import { Dribbble, Github, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 export default function SocialList({ items }: SocialListProps) {
@@ -22,6 +22,8 @@ export default function SocialList({ items }: SocialListProps) {
                     <Github className="w-5 h-5 text-tprimary" />
                   ) : item.name === "Instagram" ? (
                     <Instagram className="w-5 h-5 text-tprimary" />
+                  ) : item.name === "Dribbble" ? (
+                    <Dribbble className="w-5 h-5 text-tprimary" />
                   ) : null}
                 </Link>
               </li>
