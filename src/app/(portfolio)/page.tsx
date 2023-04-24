@@ -1,16 +1,37 @@
+import ProjectCard from "@/components/project-card";
 import SectionHeader from "@/components/section-header";
 import SocialList from "@/components/social-list";
 import TechList from "@/components/tech-list";
 import { socialConfig } from "@/config/socials";
 import { techConfig } from "@/config/tech";
-import Image from "next/image";
+import { MainProjectItem } from "@/types";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import { Tokens } from "../../../mirrorful/.mirrorful/theme";
+import ButtonAccent from "@/components/button-accent";
+import { ArrowRight } from "lucide-react";
 
 const ContactSection = dynamic(() => import("@/components/contact-section"), {
   ssr: false,
 });
 
-export default function Home() {
+const getFeaturedProjects = async (): Promise<MainProjectItem> => {
+  let baseUrl = "http://localhost:3000";
+  if (process.env.VERCEL_URL) {
+    baseUrl = process.env.VERCEL_URL;
+  }
+  const res = await fetch(`${baseUrl}/projects/api`, {
+    next: {
+      revalidate: 60,
+    },
+  });
+  const data = await res.json();
+  return (data as { data: MainProjectItem }).data;
+};
+
+export default async function Home() {
+  const projects = await getFeaturedProjects();
+
   return (
     <main>
       {/* Hero Section */}
@@ -34,6 +55,10 @@ export default function Home() {
                 width={500}
                 height={500}
                 alt="Ikram Maulana"
+                style={{
+                  height: "auto",
+                  width: "auto",
+                }}
               />
               <div
                 id="decoration-2"
@@ -76,6 +101,45 @@ export default function Home() {
         </div>
       </section>
       {/* End Tech Stack Section */}
+
+      {/* Projects Section */}
+      <section id="projects" className="pb-16 pt-36 lg:pt-52">
+        <div className="container max-w-sm md:max-w-2xl lg:max-w-5xl">
+          <div className="grid items-center grid-rows-1 gap-14 md:px-8">
+            <SectionHeader
+              title="Projects"
+              description="Some of my recent projects 🚀"
+            />
+
+            <div className="flex flex-col gap-10">
+              {projects.length > 0 ? (
+                projects.map((project) => (
+                  <ProjectCard key={project.uuid} item={project} />
+                ))
+              ) : (
+                <div
+                  className="w-full p-5 rounded-lg justify-items-center lg:p-6"
+                  style={{
+                    backgroundColor: Tokens.colors["fire-opal"]["base"],
+                  }}
+                >
+                  <h4 className="text-center text-white">
+                    No project yet, please check back later
+                  </h4>
+                </div>
+              )}
+
+              {projects.length > 0 && (
+                <ButtonAccent url="/projects" centered>
+                  View All Projects
+                  <ArrowRight className="ml-2" />
+                </ButtonAccent>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* End Project Section */}
 
       {/* Contact Section */}
       <ContactSection />

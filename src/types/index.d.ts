@@ -68,3 +68,35 @@ export interface ContactCircleProps {
   className?: string;
   style?: React.CSSProperties;
 }
+
+export type ProjectItem = {
+  uuid: string;
+  name: string;
+  description: string;
+  image_url: string;
+  techs: {
+    name: string;
+  }[];
+  github_url: string;
+  demo_url: string;
+};
+
+export type MainProjectItem = ProjectItem[];
+
+export interface ProjectCardProps {
+  item: ProjectItem;
+}
+
+export interface ImageScrollProps {
+  imageUrl: string;
+  demoUrl: string;
+}
+
+export interface ButtonAccentProps {
+  children: React.ReactNode;
+  url: string;
+  centered?: boolean;
+  newTab?: boolean;
+  styleNormal?: React.CSSProperties;
+  styleHover?: React.CSSProperties;
+}
