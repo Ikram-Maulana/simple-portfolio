@@ -69,14 +69,14 @@ export interface ContactCircleProps {
   style?: React.CSSProperties;
 }
 
+type JSONValue = string | number | boolean | JSONObject | JSONArray;
+
 export type ProjectItem = {
   uuid: string;
   name: string;
   description: string;
   image_url: string;
-  techs?: {
-    name: string;
-  }[];
+  techs: JSONValue;
   github_url: string;
   demo_url: string;
 };
