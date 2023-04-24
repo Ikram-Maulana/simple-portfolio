@@ -23,7 +23,7 @@ export default function ProjectCard({ item }: ProjectCardProps) {
             {item.description}
           </p>
           <small className="mt-3 text-sm font-medium leading-none text-tprimary/50">
-            {item.techs.map((tech) => tech.name).join(", ")}
+            {item.techs.map((tech: any) => tech.name).join(", ")}
           </small>
           <div className="flex flex-row gap-2 mt-6">
             <ButtonAccent
