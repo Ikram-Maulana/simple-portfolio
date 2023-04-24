@@ -12,5 +12,10 @@ export const siteConfig: SiteConfig = {
       href: "/projects",
       disabled: false,
     },
+    {
+      title: "Designs",
+      href: "/designs",
+      disabled: false,
+    },
   ],
 };

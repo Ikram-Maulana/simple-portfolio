@@ -87,6 +87,19 @@ export interface ProjectCardProps {
   item: ProjectItem;
 }
 
+export type DesignItem = {
+  uuid: string;
+  name: string;
+  image_url: string;
+  dribbble_url: string;
+};
+
+export type MainDesignItem = DesignItem[];
+
+export interface DesignCardProps {
+  item: DesignItem;
+}
+
 export interface ImageScrollProps {
   imageUrl: string;
   demoUrl: string;
