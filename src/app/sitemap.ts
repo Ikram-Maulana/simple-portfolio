@@ -10,5 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://ikram-maulana.tech/projects",
       lastModified: new Date(),
     },
+    {
+      url: "https://ikram-maulana.tech/designs",
+      lastModified: new Date(),
+    },
   ];
 }
