@@ -1,7 +1,9 @@
 import ProjectCard from "@/components/project-card";
 import prisma from "@/lib/prisma";
 import Link from "next/link";
+import { Suspense } from "react";
 import { Tokens } from "../../../../mirrorful/.mirrorful/theme";
+import LoadingSkeleton from "./loading-skeleton";
 
 export const revalidate = 3600;
 
@@ -36,40 +38,44 @@ export default async function Projects() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-10">
-              {projects.length > 0 ? (
-                projects.map((project) => (
-                  <ProjectCard key={project.uuid} item={project} />
-                ))
-              ) : (
-                <div
-                  className="w-full p-5 rounded-lg justify-items-center lg:p-6"
-                  style={{
-                    backgroundColor: Tokens.colors["fire-opal"]["base"],
-                  }}
-                >
-                  <h4 className="text-center text-white">
-                    No project yet, please check back later
-                  </h4>
-                </div>
-              )}
-            </div>
+            <Suspense fallback={<LoadingSkeleton />}>
+              <div className="flex flex-col gap-10">
+                {projects.length > 0 ? (
+                  projects.map((project) => (
+                    <ProjectCard key={project.uuid} item={project} />
+                  ))
+                ) : (
+                  <div
+                    className="w-full p-5 rounded-lg justify-items-center lg:p-6"
+                    style={{
+                      backgroundColor: Tokens.colors["fire-opal"]["base"],
+                    }}
+                  >
+                    <h4 className="text-center text-white">
+                      No project yet, please check back later
+                    </h4>
+                  </div>
+                )}
+              </div>
+            </Suspense>
 
-            {projects.length > 0 && (
-              <small className="text-sm font-medium leading-none text-center">
-                Hey, hey, hey... I&apos;ve got even more on{" "}
-                <Link
-                  href="https://github.com/ikram-maulana"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    color: Tokens.colors["fire-opal"]["base"],
-                  }}
-                >
-                  My Github!
-                </Link>
-              </small>
-            )}
+            <Suspense fallback={null}>
+              {projects.length > 0 && (
+                <small className="text-sm font-medium leading-none text-center">
+                  Hey, hey, hey... I&apos;ve got even more on{" "}
+                  <Link
+                    href="https://github.com/ikram-maulana"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: Tokens.colors["fire-opal"]["base"],
+                    }}
+                  >
+                    My Github!
+                  </Link>
+                </small>
+              )}
+            </Suspense>
           </div>
         </div>
       </section>
