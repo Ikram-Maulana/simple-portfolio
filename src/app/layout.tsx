@@ -54,6 +54,7 @@ export const metadata = {
       url: "/apple-touch-icon-precomposed.png",
     },
   },
+  themeColor: "#F9F5EB",
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
