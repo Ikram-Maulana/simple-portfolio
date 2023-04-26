@@ -12,7 +12,7 @@ export default function DesignCard({ item }: DesignCardProps) {
           width={800}
           height={600}
           alt={item.name}
-          priotity={true}
+          priority={true}
         />
       </Link>
     </div>
