@@ -48,14 +48,14 @@ export default async function Home() {
                 className="absolute right-0 z-10 w-1/4 lg:w-1/3 -top-8 md:-top-14 lg:-top-16 h-1/3"
               >
                 <Image
-                  src="/images/star.avif"
+                  src="/images/star.webp"
                   width={500}
                   height={500}
                   alt="Star Decoration"
                 />
               </div>
               <Image
-                src="/images/hero.avif"
+                src="/images/hero.webp"
                 width={500}
                 height={500}
                 alt="Ikram Maulana"
@@ -69,7 +69,7 @@ export default async function Home() {
                 className="absolute left-0 z-10 w-1/4 lg:-left-6 lg:w-1/3 -bottom-12 md:-bottom-14 lg:-bottom-12 h-1/3"
               >
                 <Image
-                  src="/images/fan.avif"
+                  src="/images/fan.webp"
                   width={500}
                   height={500}
                   alt="Fan Decoration"
