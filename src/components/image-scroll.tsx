@@ -1,4 +1,5 @@
 import { ImageScrollProps } from "@/types";
+import emojiRegex from "emoji-regex";
 import Link from "next/link";
 
 export default function ImageScroll({
@@ -6,6 +7,12 @@ export default function ImageScroll({
   imageUrl,
   demoUrl,
 }: ImageScrollProps) {
+  // remove all emoji from name
+  const regex = emojiRegex();
+  let cleanName = name.replace(regex, "");
+  // delete spaces from name
+  cleanName = cleanName.replace(/\s/g, "");
+
   return (
     <Link
       href={demoUrl}
@@ -18,7 +25,7 @@ export default function ImageScroll({
           transitionDuration: "9000ms",
           animationDuration: "9000ms",
         }}
-        aria-label={`${name} Go to Demo Link`}
+        aria-label={`Go to ${cleanName} Demo Link`}
       ></div>
     </Link>
   );

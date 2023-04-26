@@ -34,6 +34,9 @@ dependencies:
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
+  emoji-regex:
+    specifier: ^10.2.1
+    version: 10.2.1
   eslint:
     specifier: 8.39.0
     version: 8.39.0
@@ -1133,6 +1136,10 @@ packages:
 
   /electron-to-chromium@1.4.368:
     resolution: {integrity: sha512-e2aeCAixCj9M7nJxdB/wDjO6mbYX+lJJxSJCXDzlr5YPGYVofuJwGN9nKg2o6wWInjX6XmxRinn3AeJMK81ltw==}
+    dev: false
+
+  /emoji-regex@10.2.1:
+    resolution: {integrity: sha512-97g6QgOk8zlDRdgq1WxwgTMgEWGVAQvB5Fdpgc1MkNy56la5SKP9GsMXKDOdqwn90/41a8yPwIGk1Y6WVbeMQA==}
     dev: false
 
   /emoji-regex@9.2.2:
