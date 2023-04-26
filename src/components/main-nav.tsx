@@ -46,7 +46,7 @@ export default function MainNav({ items, children }: MainNavProps) {
               className="block py-6 text-xl font-bold text-tprimary"
             >
               <Image
-                src="/images/avatar.png"
+                src="/images/avatar.avif"
                 width={40}
                 height={40}
                 alt="Logo"

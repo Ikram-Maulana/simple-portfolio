@@ -69,7 +69,7 @@ export default function ContactSection() {
                 }}
               >
                 <Image
-                  src="/images/contact-text.png"
+                  src="/images/contact-text.avif"
                   width={120}
                   height={120}
                   alt="Contact Me"

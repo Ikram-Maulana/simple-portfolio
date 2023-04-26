@@ -43,7 +43,7 @@ export default async function Designs() {
                   ))
                 ) : (
                   <div
-                    className="w-full p-5 rounded-lg justify-items-center lg:p-6"
+                    className="w-full p-5 rounded-lg justify-items-center lg:p-6 col-span-2"
                     style={{
                       backgroundColor: Tokens.colors["fire-opal"]["base"],
                     }}
@@ -58,7 +58,7 @@ export default async function Designs() {
 
             <Suspense fallback={null}>
               {designs.length > 0 && (
-                <small className="text-sm font-medium leading-none text-center">
+                <small className="text-sm font-medium leading-7 text-center">
                   Hey, hey, hey... I&apos;ve got even more on{" "}
                   <Link
                     href="https://dribbble.com/ikram_maulana"
