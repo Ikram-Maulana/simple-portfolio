@@ -113,3 +113,13 @@ export interface ButtonAccentProps {
   styleNormal?: React.CSSProperties;
   styleHover?: React.CSSProperties;
 }
+
+export interface CloudOpImageProps {
+  className?: string;
+  width: number;
+  height: number;
+  src: string;
+  alt: string;
+  style?: React.CSSProperties;
+  priority?: boolean;
+}
