@@ -1,7 +1,11 @@
 import { ImageScrollProps } from "@/types";
 import Link from "next/link";
 
-export default function ImageScroll({ imageUrl, demoUrl }: ImageScrollProps) {
+export default function ImageScroll({
+  name,
+  imageUrl,
+  demoUrl,
+}: ImageScrollProps) {
   return (
     <Link
       href={demoUrl}
@@ -14,6 +18,7 @@ export default function ImageScroll({ imageUrl, demoUrl }: ImageScrollProps) {
           transitionDuration: "9000ms",
           animationDuration: "9000ms",
         }}
+        aria-label={`${name} Go to Demo Link`}
       ></div>
     </Link>
   );

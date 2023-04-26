@@ -101,6 +101,7 @@ export interface DesignCardProps {
 }
 
 export interface ImageScrollProps {
+  name: string;
   imageUrl: string;
   demoUrl: string;
 }
