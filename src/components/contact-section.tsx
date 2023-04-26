@@ -69,7 +69,7 @@ export default function ContactSection() {
                 }}
               >
                 <Image
-                  src="/images/contact-text.avif"
+                  src="/images/contact-text.webp"
                   width={120}
                   height={120}
                   alt="Contact Me"
