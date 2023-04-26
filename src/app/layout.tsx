@@ -1,8 +1,9 @@
 import { RootLayoutProps } from "@/types";
 import "@total-typescript/ts-reset";
+import { Analytics } from "@vercel/analytics/react";
+import { Tokens } from "../../mirrorful/.mirrorful/theme";
 import { montserrat, poppins } from "../assets/fonts";
 import "../styles/globals.css";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
 
 export const metadata = {
   title: "Ikram Maulana",
@@ -67,6 +68,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         {children}
       </body>
+
+      <Analytics />
     </html>
   );
 }
