@@ -63,6 +63,7 @@ export default function MainNav({ items, children }: MainNavProps) {
                 backgroundColor: Tokens.colors["fire-opal"][100],
               }}
               onClick={() => setShowMobileMenu(!showMobileMenu)}
+              aria-label="Toggle menu"
             >
               {showMobileMenu ? (
                 <X className="w-6 h-6" />

@@ -13,7 +13,11 @@ export default function ProjectCard({ item }: ProjectCardProps) {
           backgroundColor: Tokens.colors["pearl-bush"]["base"],
         }}
       >
-        <ImageScroll imageUrl={item.image_url} demoUrl={item.demo_url} />
+        <ImageScroll
+          name={item.name}
+          imageUrl={item.image_url}
+          demoUrl={item.demo_url}
+        />
 
         <div className="flex flex-col items-center justify-center w-full text-center text-project lg:items-start lg:justify-start lg:text-start text-tprimary lg:self-center">
           <h3 className="text-xl font-bold tracking-tight scroll-m-20 font-montserrat">
