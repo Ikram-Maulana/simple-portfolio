@@ -1,5 +1,3 @@
-"use client";
-
 import { ImageScrollProps } from "@/types";
 import Link from "next/link";
 

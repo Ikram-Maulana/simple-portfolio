@@ -61,7 +61,7 @@ export default async function Projects() {
 
             <Suspense fallback={null}>
               {projects.length > 0 && (
-                <small className="text-sm font-medium leading-none text-center">
+                <small className="text-sm font-medium leading-7 text-center">
                   Hey, hey, hey... I&apos;ve got even more on{" "}
                   <Link
                     href="https://github.com/ikram-maulana"
