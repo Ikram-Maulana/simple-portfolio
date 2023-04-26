@@ -63,6 +63,7 @@ export default async function Home() {
                   height: "auto",
                   width: "auto",
                 }}
+                priority
               />
               <div
                 id="decoration-2"
