@@ -43,7 +43,7 @@ export default async function Designs() {
                   ))
                 ) : (
                   <div
-                    className="w-full p-5 rounded-lg justify-items-center lg:p-6 col-span-2"
+                    className="w-full col-span-2 p-5 rounded-lg justify-items-center lg:p-6"
                     style={{
                       backgroundColor: Tokens.colors["fire-opal"]["base"],
                     }}
