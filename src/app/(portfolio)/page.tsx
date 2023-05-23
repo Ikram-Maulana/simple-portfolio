@@ -17,8 +17,6 @@ const ContactSection = dynamic(() => import("@/components/contact-section"), {
   ssr: false,
 });
 
-export const revalidate = 60;
-
 const getFeaturedProjects = async () => {
   try {
     const projects = await prisma.projects.findMany({

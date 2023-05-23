@@ -5,8 +5,6 @@ import { Suspense } from "react";
 import { Tokens } from "../../../../mirrorful/.mirrorful/theme";
 import LoadingSkeleton from "./loading-skeleton";
 
-export const revalidate = 60;
-
 const getProjects = async () => {
   try {
     const projects = await prisma.projects.findMany();
