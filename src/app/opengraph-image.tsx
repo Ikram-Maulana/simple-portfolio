@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/server";
+import { ImageResponse } from "next/og";
 
 export const alt = "Ikram Maulana Portfolio";
 export const size = {

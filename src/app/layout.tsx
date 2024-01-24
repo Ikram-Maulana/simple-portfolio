@@ -1,11 +1,12 @@
 import { RootLayoutProps } from "@/types";
 import "@total-typescript/ts-reset";
 import { Analytics } from "@vercel/analytics/react";
+import { Metadata, Viewport } from "next";
 import { Tokens } from "../../mirrorful/.mirrorful/theme";
 import { montserrat, poppins } from "../assets/fonts";
 import "../styles/globals.css";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Ikram Maulana",
   description:
     "Discover the personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
@@ -31,20 +32,6 @@ export const metadata = {
     description:
       "Discover the personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
     url: "https://ikram-maulana.tech",
-    site_name: "Ikram Maulana Portfolio",
-  },
-  robots: {
-    index: false,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: false,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
   icons: {
     icon: "/favicon.ico",
@@ -55,6 +42,9 @@ export const metadata = {
       url: "/apple-touch-icon-precomposed.png",
     },
   },
+};
+
+export const viewport: Viewport = {
   themeColor: "#F9F5EB",
 };
 
