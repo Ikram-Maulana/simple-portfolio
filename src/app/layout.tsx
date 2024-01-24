@@ -1,6 +1,5 @@
 import { RootLayoutProps } from "@/types";
 import "@total-typescript/ts-reset";
-import { Analytics } from "@vercel/analytics/react";
 import { Metadata, Viewport } from "next";
 import { Tokens } from "../../mirrorful/.mirrorful/theme";
 import { montserrat, poppins } from "../assets/fonts";
@@ -58,8 +57,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         {children}
       </body>
-
-      <Analytics />
     </html>
   );
 }
