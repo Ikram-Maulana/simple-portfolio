@@ -7,7 +7,14 @@
     "dev": "next dev",
     "build": "prisma generate && next build",
     "start": "next start",
+    "version": "auto-changelog -p",
     "lint": "next lint"
+  },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "keepachangelog",
+    "unreleased": true,
+    "commitLimit": false
   },
   "dependencies": {
     "@mantine/hooks": "^7.4.2",
@@ -38,6 +45,7 @@
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.5.1",
+    "auto-changelog": "^2.4.0",
     "prisma": "^5.8.1"
   }
 }
