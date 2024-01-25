@@ -25,18 +25,18 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Ikram Maulana",
-      url: new URL(process.env.VERCEL_URL || "https://ikrammaulana.my.id"),
+      url: "https://ikrammaulana.my.id",
     },
   ],
   creator: "Ikram Maulana",
-  metadataBase: new URL(process.env.VERCEL_URL || "https://ikrammaulana.my.id"),
+  metadataBase: new URL("https://ikrammaulana.my.id"),
   openGraph: {
     type: "website",
     locale: "id_ID",
     title: "Ikram Maulana Portfolio",
     description:
       "Discover the simple personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
-    url: new URL(process.env.VERCEL_URL || "https://ikrammaulana.my.id"),
+    url: "https://ikrammaulana.my.id",
     images: [
       {
         url: "/og.jpg",
