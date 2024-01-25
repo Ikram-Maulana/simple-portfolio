@@ -1,36 +1,49 @@
+import { montserrat, poppins } from "@/assets/fonts";
+import "@/styles/globals.css";
 import { RootLayoutProps } from "@/types";
 import "@total-typescript/ts-reset";
 import { Metadata, Viewport } from "next";
 import { Tokens } from "../../mirrorful/.mirrorful/theme";
-import { montserrat, poppins } from "../assets/fonts";
-import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Ikram Maulana",
   description:
-    "Discover the personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
-  applicationName: "Ikram Maulana Portfolio",
+    "Discover the simple personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
+  applicationName: "Ikram Maulana Simple Portfolio",
   keywords: [
     "Ikram Maulana",
     "Ikram Maulana Portfolio",
+    "Ikram Maulana Simple Portfolio",
     "Ikram Maulana Website",
     "Ikram Maulana Full Stack Web Developer",
     "Full Stack Web Developer",
     "React Developer",
+    "Daunnesia",
+    "Daunnesia Agency",
   ],
   authors: [
     {
       name: "Ikram Maulana",
-      url: "https://ikram-maulana.tech",
+      url: new URL(process.env.VERCEL_URL || "https://ikrammaulana.my.id"),
     },
   ],
   creator: "Ikram Maulana",
+  metadataBase: new URL(process.env.VERCEL_URL || "https://ikrammaulana.my.id"),
   openGraph: {
     type: "website",
+    locale: "id_ID",
     title: "Ikram Maulana Portfolio",
     description:
-      "Discover the personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
-    url: "https://ikram-maulana.tech",
+      "Discover the simple personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
+    url: new URL(process.env.VERCEL_URL || "https://ikrammaulana.my.id"),
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ikram Maulana Simple Portfolio",
+      },
+    ],
   },
   icons: {
     icon: "/favicon.ico",
