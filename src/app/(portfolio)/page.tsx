@@ -7,9 +7,11 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Suspense } from "react";
 import Projects from "./_components/projects";
+import ContactSkeleton from "./_components/skeleton/contact-skeleton";
 import ProjectsSkeleton from "./_components/skeleton/projects-skeleton";
 
 const ContactSection = dynamic(() => import("@/components/contact-section"), {
+  loading: () => <ContactSkeleton />,
   ssr: false,
 });
 
