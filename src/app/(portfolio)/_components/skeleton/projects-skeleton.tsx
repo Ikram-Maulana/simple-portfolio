@@ -1,7 +1,7 @@
 import { Skeleton } from "@/components/ui/skeleton";
-import { Tokens } from "../../../../mirrorful/.mirrorful/theme";
+import { Tokens } from "mirrorful/.mirrorful/theme";
 
-export default function LoadingSkeleton() {
+export default function ProjectsSkeleton() {
   return (
     <div className="flex flex-col gap-10">
       {[...Array(3)].map((_, index) => (

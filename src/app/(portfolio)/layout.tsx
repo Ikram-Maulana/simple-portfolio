@@ -7,7 +7,7 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
   return (
     <>
       <MainNav items={siteConfig.mainNav} />
-      {children}
+      <main>{children}</main>
       <ScrollTop />
     </>
   );
