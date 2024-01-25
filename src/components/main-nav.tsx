@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
+import { Tokens } from "mirrorful/.mirrorful/theme";
 import ButtonAccent from "./button-accent";
 import MobileNav from "./mobile-nav";
 import { Button } from "./ui/button";

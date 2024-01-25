@@ -1,50 +1,50 @@
+import { montserrat, poppins } from "@/assets/fonts";
+import "@/styles/globals.css";
 import { RootLayoutProps } from "@/types";
 import "@total-typescript/ts-reset";
-import { Analytics } from "@vercel/analytics/react";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
-import { montserrat, poppins } from "../assets/fonts";
-import "../styles/globals.css";
+import { Metadata, Viewport } from "next";
+import { Tokens } from "mirrorful/.mirrorful/theme";
+import Script from "next/script";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Ikram Maulana",
   description:
-    "Discover the personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
-  applicationName: "Ikram Maulana Portfolio",
+    "Discover the simple personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
+  applicationName: "Ikram Maulana Simple Portfolio",
   keywords: [
     "Ikram Maulana",
     "Ikram Maulana Portfolio",
+    "Ikram Maulana Simple Portfolio",
     "Ikram Maulana Website",
     "Ikram Maulana Full Stack Web Developer",
     "Full Stack Web Developer",
     "React Developer",
+    "Daunnesia",
+    "Daunnesia Agency",
   ],
   authors: [
     {
       name: "Ikram Maulana",
-      url: "https://ikram-maulana.tech",
+      url: "https://ikrammaulana.my.id",
     },
   ],
   creator: "Ikram Maulana",
+  metadataBase: new URL("https://ikrammaulana.my.id"),
   openGraph: {
     type: "website",
+    locale: "id_ID",
     title: "Ikram Maulana Portfolio",
     description:
-      "Discover the personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
-    url: "https://ikram-maulana.tech",
-    site_name: "Ikram Maulana Portfolio",
-  },
-  robots: {
-    index: false,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: false,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+      "Discover the simple personal portfolio of Ikram Maulana, a Full Stack Web Developer. Explore my collection of projects and skills in web development.",
+    url: "https://ikrammaulana.my.id",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ikram Maulana Simple Portfolio",
+      },
+    ],
   },
   icons: {
     icon: "/favicon.ico",
@@ -55,6 +55,9 @@ export const metadata = {
       url: "/apple-touch-icon-precomposed.png",
     },
   },
+};
+
+export const viewport: Viewport = {
   themeColor: "#F9F5EB",
 };
 
@@ -68,8 +71,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         {children}
       </body>
-
-      <Analytics />
+      <Script
+        src="https://analytics.ikrammaulana.my.id/script.js"
+        strategy="lazyOnload"
+        data-website-id="35646538-966a-47cc-bb62-7da84e90dace"
+      />
     </html>
   );
 }

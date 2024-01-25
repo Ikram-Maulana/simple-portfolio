@@ -1,6 +1,6 @@
 import { ProjectCardProps } from "@/types";
 import { ExternalLink, Github } from "lucide-react";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
+import { Tokens } from "mirrorful/.mirrorful/theme";
 import ButtonAccent from "./button-accent";
 import ImageScroll from "./image-scroll";
 

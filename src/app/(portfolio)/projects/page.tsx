@@ -1,11 +1,13 @@
 import ProjectCard from "@/components/project-card";
 import prisma from "@/lib/prisma";
 import Link from "next/link";
-import { Suspense } from "react";
-import { Tokens } from "../../../../mirrorful/.mirrorful/theme";
-import LoadingSkeleton from "./loading-skeleton";
+import { Tokens } from "mirrorful/.mirrorful/theme";
+import { unstable_noStore as noStore } from "next/cache";
 
 const getProjects = async () => {
+  "useServer";
+  noStore();
+
   try {
     const projects = await prisma.projects.findMany();
 
@@ -36,44 +38,40 @@ export default async function Projects() {
               </p>
             </div>
 
-            <Suspense fallback={<LoadingSkeleton />}>
-              <div className="flex flex-col gap-10">
-                {projects.length > 0 ? (
-                  projects.map((project) => (
-                    <ProjectCard key={project.uuid} item={project} />
-                  ))
-                ) : (
-                  <div
-                    className="w-full p-5 rounded-lg justify-items-center lg:p-6"
-                    style={{
-                      backgroundColor: Tokens.colors["fire-opal"]["base"],
-                    }}
-                  >
-                    <h4 className="text-center text-white">
-                      No project yet, please check back later
-                    </h4>
-                  </div>
-                )}
-              </div>
-            </Suspense>
-
-            <Suspense fallback={null}>
-              {projects.length > 0 && (
-                <small className="text-sm font-medium leading-7 text-center">
-                  Hey, hey, hey... I&apos;ve got even more on{" "}
-                  <Link
-                    href="https://github.com/ikram-maulana"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: Tokens.colors["fire-opal"]["base"],
-                    }}
-                  >
-                    My Github!
-                  </Link>
-                </small>
+            <div className="flex flex-col gap-10">
+              {projects.length > 0 ? (
+                projects.map((project) => (
+                  <ProjectCard key={project.uuid} item={project} />
+                ))
+              ) : (
+                <div
+                  className="w-full p-5 rounded-lg justify-items-center lg:p-6"
+                  style={{
+                    backgroundColor: Tokens.colors["fire-opal"]["base"],
+                  }}
+                >
+                  <h4 className="text-center text-white">
+                    No project yet, please check back later
+                  </h4>
+                </div>
               )}
-            </Suspense>
+            </div>
+
+            {projects.length > 0 && (
+              <small className="text-sm font-medium leading-7 text-center">
+                Hey, hey, hey... I&apos;ve got even more on{" "}
+                <Link
+                  href="https://github.com/ikram-maulana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: Tokens.colors["fire-opal"]["base"],
+                  }}
+                >
+                  My Github!
+                </Link>
+              </small>
+            )}
           </div>
         </div>
       </section>

@@ -1,12 +1,14 @@
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = "https://ikrammaulana.my.id";
+
   return {
     rules: {
       userAgent: "*",
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://ikram-maulana.tech/sitemap.xml",
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

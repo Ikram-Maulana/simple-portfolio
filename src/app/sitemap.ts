@@ -1,18 +1,26 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://ikrammaulana.my.id";
+
   return [
     {
-      url: "https://ikram-maulana.tech",
+      url: `${baseUrl}`,
       lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 1,
     },
     {
-      url: "https://ikram-maulana.tech/projects",
+      url: `${baseUrl}/projects`,
       lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
     },
     {
-      url: "https://ikram-maulana.tech/designs",
+      url: `${baseUrl}/designs`,
       lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
     },
   ];
 }
