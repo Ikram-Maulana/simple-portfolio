@@ -3,7 +3,7 @@
 import { ButtonAccentProps } from "@/types";
 import { useHover } from "@mantine/hooks";
 import Link from "next/link";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
+import { Tokens } from "mirrorful/.mirrorful/theme";
 import { buttonVariants } from "./ui/button";
 
 export default function ButtonAccent({

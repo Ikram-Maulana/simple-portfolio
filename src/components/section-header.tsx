@@ -1,5 +1,5 @@
 import { SectionHeaderProps } from "@/types";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
+import { Tokens } from "mirrorful/.mirrorful/theme";
 
 export default function SectionHeader({
   title,
@@ -13,7 +13,7 @@ export default function SectionHeader({
       >
         {title}
       </p>
-      <h2 className="scroll-m-20 text-2xl font-extrabold tracking-tight transition-colors first:mt-0 text-tprimary font-montserrat">
+      <h2 className="text-2xl font-extrabold tracking-tight transition-colors scroll-m-20 first:mt-0 text-tprimary font-montserrat">
         {description}
       </h2>
     </div>

@@ -1,18 +1,18 @@
-import { TechListProps } from "@/types";
-import Image from "next/image";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../components/ui/tooltip";
+} from "@/components/ui/tooltip";
+import { TechListProps } from "@/types";
+import Image from "next/image";
+import { Tokens } from "../../mirrorful/.mirrorful/theme";
 
 export default function TechList({ items }: TechListProps) {
   return (
     <>
       {items?.length ? (
-        <div className="flex justify-center items-center flex-wrap gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-6">
           {items.map((item, index) => (
             <TooltipProvider key={index}>
               <Tooltip>

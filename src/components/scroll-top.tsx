@@ -1,7 +1,7 @@
 "use client";
 
 import ScrollToTop from "react-scroll-to-top";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
+import { Tokens } from "mirrorful/.mirrorful/theme";
 
 export default function ScrollTop() {
   return (

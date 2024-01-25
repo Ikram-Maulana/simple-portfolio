@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { RootLayoutProps } from "@/types";
 import "@total-typescript/ts-reset";
 import { Metadata, Viewport } from "next";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
+import { Tokens } from "mirrorful/.mirrorful/theme";
 
 export const metadata: Metadata = {
   title: "Ikram Maulana",

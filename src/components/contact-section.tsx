@@ -5,7 +5,7 @@ import { useHover, useMouse } from "@mantine/hooks";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
+import { Tokens } from "mirrorful/.mirrorful/theme";
 import SectionHeader from "./section-header";
 
 export default function ContactSection() {

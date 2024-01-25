@@ -2,7 +2,7 @@ import { useLockBody } from "@/hooks/use-lock-body";
 import { cn } from "@/lib/utils";
 import { MobileNavProps } from "@/types";
 import Link from "next/link";
-import { Tokens } from "../../mirrorful/.mirrorful/theme";
+import { Tokens } from "mirrorful/.mirrorful/theme";
 import { Separator } from "./ui/separator";
 
 export default function MobileNav({ items, children }: MobileNavProps) {
