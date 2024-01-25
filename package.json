@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "prisma generate && next build",
     "start": "next start",
+    "version": "auto-changelog -p && git add CHANGELOG.md",
     "lint": "next lint"
   },
   "dependencies": {
@@ -38,6 +39,7 @@
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.5.1",
+    "auto-changelog": "^2.4.0",
     "prisma": "^5.8.1"
   }
 }
