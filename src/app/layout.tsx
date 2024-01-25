@@ -4,6 +4,7 @@ import { RootLayoutProps } from "@/types";
 import "@total-typescript/ts-reset";
 import { Metadata, Viewport } from "next";
 import { Tokens } from "mirrorful/.mirrorful/theme";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Ikram Maulana",
@@ -70,6 +71,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         {children}
       </body>
+      <Script
+        src="https://analytics.ikrammaulana.my.id/script.js"
+        strategy="lazyOnload"
+        data-website-id="35646538-966a-47cc-bb62-7da84e90dace"
+      />
     </html>
   );
 }
