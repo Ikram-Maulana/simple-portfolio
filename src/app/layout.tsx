@@ -1,9 +1,10 @@
 import { montserrat, poppins } from "@/assets/fonts";
+import { env } from "@/env";
 import "@/styles/globals.css";
 import { RootLayoutProps } from "@/types";
 import "@total-typescript/ts-reset";
-import { Metadata, Viewport } from "next";
 import { Tokens } from "mirrorful/.mirrorful/theme";
+import { Metadata, Viewport } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -72,9 +73,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {children}
       </body>
       <Script
-        src="https://analytics.ikrammaulana.my.id/script.js"
+        src={env.NEXT_PUBLIC_UMAMI_URL}
         strategy="lazyOnload"
-        data-website-id="35646538-966a-47cc-bb62-7da84e90dace"
+        data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
       />
     </html>
   );
