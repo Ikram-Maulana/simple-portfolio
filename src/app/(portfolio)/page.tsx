@@ -12,7 +12,6 @@ import ProjectsSkeleton from "./_components/skeleton/projects-skeleton";
 
 const ContactSection = dynamic(() => import("@/components/contact-section"), {
   loading: () => <ContactSkeleton />,
-  ssr: false,
 });
 
 export default async function Home() {
