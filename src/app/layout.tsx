@@ -1,11 +1,25 @@
-import { montserrat, poppins } from "@/assets/fonts";
 import { env } from "@/env";
 import "@/styles/globals.css";
 import { RootLayoutProps } from "@/types";
 import "@total-typescript/ts-reset";
 import { Tokens } from "mirrorful/.mirrorful/theme";
 import { Metadata, Viewport } from "next";
+import { Montserrat, Poppins } from "next/font/google";
 import Script from "next/script";
+
+export const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+export const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Ikram Maulana",
