@@ -31,6 +31,7 @@ export default async function Home() {
                   width={500}
                   height={500}
                   alt="Star Decoration"
+                  priority
                 />
               </div>
               <Image
@@ -53,6 +54,7 @@ export default async function Home() {
                   width={500}
                   height={500}
                   alt="Fan Decoration"
+                  priority
                 />
               </div>
             </div>
