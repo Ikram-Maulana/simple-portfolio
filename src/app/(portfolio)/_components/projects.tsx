@@ -3,13 +3,10 @@ import ProjectCard from "@/components/project-card";
 import prisma from "@/lib/prisma";
 import { ArrowRight } from "lucide-react";
 import { Tokens } from "mirrorful/.mirrorful/theme";
-import { unstable_noStore as noStore } from "next/cache";
 import { FC } from "react";
 
 const getFeaturedProjects = async () => {
   "use server";
-  noStore();
-
   try {
     const projects = await prisma.projects.findMany({
       where: {
