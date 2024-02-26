@@ -1,13 +1,10 @@
 import ProjectCard from "@/components/project-card";
 import prisma from "@/lib/prisma";
-import Link from "next/link";
 import { Tokens } from "mirrorful/.mirrorful/theme";
-import { unstable_noStore as noStore } from "next/cache";
+import Link from "next/link";
 
 const getProjects = async () => {
   "useServer";
-  noStore();
-
   try {
     const projects = await prisma.projects.findMany();
 

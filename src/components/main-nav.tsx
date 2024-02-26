@@ -50,6 +50,7 @@ export default function MainNav({ items, children }: MainNavProps) {
                 width={40}
                 height={40}
                 alt="Logo"
+                priority
               />
             </Link>
           </div>

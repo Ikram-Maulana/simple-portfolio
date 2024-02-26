@@ -1,13 +1,10 @@
 import DesignCard from "@/components/design-card";
 import prisma from "@/lib/prisma";
-import { unstable_noStore as noStore } from "next/cache";
-import Link from "next/link";
 import { Tokens } from "mirrorful/.mirrorful/theme";
+import Link from "next/link";
 
 const getDesigns = async () => {
   "useServer";
-  noStore();
-
   try {
     const designs = await prisma.designs.findMany();
 
